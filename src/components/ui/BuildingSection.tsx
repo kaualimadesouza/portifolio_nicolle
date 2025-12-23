@@ -2,7 +2,7 @@ import { Card } from './Card';
 
 function BuildingSection() {
   return (
-    <Card className="p-8">
+    <Card className="p-8 max-w-3xl">
       <h1 className="text-3xl font-medium mb-6 leading-tight tracking-tight">
         <b>Nicolle Marinho</b> is building <span className="underline decoration-black">Turf</span><span className="text-gray-500">.</span>
       </h1>

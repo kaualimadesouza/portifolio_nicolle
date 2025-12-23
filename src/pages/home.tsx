@@ -1,9 +1,7 @@
 import { 
   Navigation,
   BuildingSection,
-  FeedPanel,
   InstagramProfile,
-  MobileAppMockup,
 } from '../components/ui';
 import { CareersTile } from '../components/ui/CareersTile';
 
@@ -12,13 +10,13 @@ function Home() {
     <div className="min-h-screen bg-white">
       <Navigation />
       {/* Main Content */}
-      <div className="pt-32 pb-32">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex gap-8">
+      <div className="pt-40 pb-32">
+        <div>
+          <div className="flex gap-8 justify-center">
             {/* Left Column */}
             <div className="space-y-8">
-              <BuildingSection />
-              <FeedPanel />
+              <BuildingSection 
+              />
             </div>
             {/* Right Column */}
             <div className="space-y-8">
@@ -31,7 +29,6 @@ function Home() {
                 <CareersTile />
               </div>
               <InstagramProfile />
-              <MobileAppMockup />
             </div>
           </div>
         </div>

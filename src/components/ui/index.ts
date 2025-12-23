@@ -10,6 +10,5 @@ export { InstagramProfile } from './InstagramProfile';
 export { MobileAppMockup } from './MobileAppMockup';
 export { ImageCard } from './ImageCard';
 export { ActionButton } from './ActionButton';
-export { TriviaCredits } from './TriviaCredits';
 export { CalendarWithEvents } from './CalendarWithEvents';
-export { TextCard } from './TextCard';
+export { AboutMeCard } from './AboutMeCard';
