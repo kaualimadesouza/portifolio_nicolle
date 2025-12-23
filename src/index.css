@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/outfit@5.0.0/files/outfit-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/outfit@5.0.0/files/outfit-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/outfit@5.0.0/files/outfit-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource/outfit@5.0.0/files/outfit-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black font-sans;
+  }
+}
