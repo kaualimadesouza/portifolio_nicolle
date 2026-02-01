@@ -29,7 +29,7 @@ function Work() {
       <Navigation />
       {/* Main Content */}
       <div className="pb-24 lg:pt-[165px] lg:pb-32 px-4 md:px-8 lg:px-0">
-        <div className="w-full lg:w-fit mx-0 px-0 lg:mx-auto">
+        <div className="w-full lg:w-fit mx-2 lg:mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {cards.map((card, idx) => (
               <WorkCard
