@@ -1,48 +1,46 @@
-import React from 'react';
 import { Card } from './Card';
 
 function PinterestCard() {
   return (
-    <Card className="relative w-[300px] h-[300px] rounded-xl overflow-hidden group shadow-lg bg-white flex flex-col justify-between">
-      <div className="flex flex-col h-full justify-between">
-        {/* Top: Profile */}
-        <div className="flex items-center justify-between px-5 pt-5">
-          <a href="#" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden">
-              <img
-                src="https://avatars.githubusercontent.com/u/10456829?v=4"
-                alt="Nicolle Marinho"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <div className="font-semibold text-black leading-tight text-base">Nicolle Marinho</div>
-              <div className="text-xs text-gray-400">@nicollemarinho</div>
-            </div>
-          </a>
-          <a href="https://pinterest.com/nicollemarinho" className="w-10 h-10 flex items-center justify-center rounded-full bg-red-600 hover:bg-red-700 transition">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest" className="w-5 h-5" />
-          </a>
+    <Card className="relative w-[328px] h-[328px] rounded-xl overflow-hidden shadow-lg bg-white p-4 flex flex-col justify-between">
+      {/* Podcast style card */}
+      <div className="flex gap-3 mb-3">
+        <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center">
+          <span className="text-white font-bold text-xs text-center leading-tight px-1">DESIGN<br/>TALKS</span>
         </div>
-        {/* Post */}
-        <div className="px-5 py-3 flex-1 flex items-center">
-          <div className="text-sm text-black leading-relaxed">
-            <span className="font-semibold">📌 New Pin:</span> Check out my latest inspiration board! <a href="https://pinterest.com/nicollemarinho" className="text-red-600 hover:underline">#inspiration</a> <a href="https://pinterest.com/nicollemarinho" className="text-red-600 hover:underline">#design</a>
-          </div>
+        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+          <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
         </div>
-        {/* Button */}
-        <div className="px-5 pb-5">
-          <a
-            href="https://pinterest.com/nicollemarinho"
-            className="flex items-center justify-between w-full border border-gray-200 rounded-xl py-2 px-4 bg-white hover:bg-gray-50 transition"
-            style={{ textDecoration: 'none' }}
-          >
-            <span className="font-medium text-black text-sm">View on Pinterest</span>
-            <span className="flex items-center">
-              <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </span>
-          </a>
-        </div>
+      </div>
+      {/* Podcast info */}
+      <div className="mb-3">
+        <div className="font-semibold text-black text-sm">Design como carreira?</div>
+        <div className="text-xs text-gray-500">Podcast de Design</div>
+      </div>
+      {/* Player controls */}
+      <div className="flex items-center justify-between text-gray-400">
+        <button className="hover:text-gray-600 transition">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+          </svg>
+        </button>
+        <button className="hover:text-gray-600 transition">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+        </button>
+        <button className="hover:text-gray-600 transition">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+          </svg>
+        </button>
+        <button className="hover:text-gray-600 transition">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m-2.828-9.9a9 9 0 000 12.728"/>
+          </svg>
+        </button>
       </div>
     </Card>
   );

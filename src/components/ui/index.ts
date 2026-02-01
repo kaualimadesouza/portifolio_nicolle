@@ -1,14 +1,7 @@
 export { Card } from './Card';
 export { Navigation } from './Navigation';
 export { BuildingSection } from './BuildingSection';
-export { AvailabilityGrid } from './AvailabilityGrid';
-export { FeedPanel } from './FeedPanel';
-export { KeyboardShortcut } from './KeyboardShortcut';
-export { CalendarCard } from './CalendarCard';
-export { NotionWorkspace } from './NotionWorkspace';
 export { InstagramProfile } from './InstagramProfile';
-export { MobileAppMockup } from './MobileAppMockup';
-export { ImageCard } from './ImageCard';
-export { ActionButton } from './ActionButton';
-export { CalendarWithEvents } from './CalendarWithEvents';
 export { AboutMeCard } from './AboutMeCard';
+export { default as PhotoCard } from './PhotoCard';
+export { default as ContactCard } from './ContactCard';

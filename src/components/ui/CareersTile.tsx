@@ -1,8 +1,6 @@
-import React from 'react';
-
 function CareersTile() {
   return (
-    <div className="relative w-[280px] h-[280px] rounded-2xl overflow-hidden group shadow-lg bg-black">
+    <div className="relative w-full sm:w-[250px] md:w-[280px] aspect-square rounded-2xl overflow-hidden group shadow-lg bg-black">
       <div className="relative z-10 flex flex-col h-full justify-end p-8">
         <div className="mb-4">
           <h3 className="text-2xl font-bold text-white mb-1">Careers</h3>

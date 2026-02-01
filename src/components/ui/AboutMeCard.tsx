@@ -1,72 +1,80 @@
+import { useState } from 'react';
+import CV_Nicolle from '../../assets/CV_Nicolle.pdf';
 import { Card } from './Card';
 
 function AboutMeCard() {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const email = "nicollemarinhomartins@gmail.com";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 3000);
+  };
   return (
-    <Card className="p-8 max-w-2xl">
-      <h1 className="text-3xl font-medium mb-6 leading-tight tracking-tight">
-        <span className="font-bold text-black">What I'm bout.</span>
+    <Card className="p-6 md:p-8 w-full h-full">
+      <h1 className="text-2xl md:text-3xl font-medium mb-4 md:mb-6 leading-tight tracking-tight">
+        <span className="font-bold text-black">Sobre mim.</span>
       </h1>
-      <div className="h-px bg-black/10 mb-8"></div>
-      <div className="space-y-8">
+      <div className="h-px bg-black/10 mb-6 md:mb-8"></div>
+      <div className="space-y-6 md:space-y-8">
         {/* Where I'm From */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">Where I'M From</div>
-          <div className="text-lg leading-relaxed font-light text-gray-500">
-            I was born and raised in Utica, NY. My Dad worked as a mail carrier for the Post Office. My Mom worked as a Kindergarten Teacher. Growing up they repeatedly told me to get off the computer and go outside. The OG Touch Grass™. I'm glad I did. There's not a ton to do in Utica but there is a ton to eat and the food is definitely better than where you're from.
+          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">De onde eu venho</div>
+          <div className="text-base md:text-lg leading-relaxed font-light text-gray-500">
+            Sou graduanda em Letras pela USP e moro em São Bernardo do Campo (SP). Minha formação integra literatura e ilustração, e entendo a escrita como um campo expandido que envolve imagem, composição e a materialidade do livro. Meu processo criativo sempre esteve ligado à produção de imagens e ao pensamento visual.
           </div>
         </div>
         {/* What I used to Do */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">What I used to Do</div>
-          <div className="text-lg leading-relaxed font-light text-gray-500">
-            When I was 13, I got my first job as a dishwasher at <span className="bg-gray-200 px-1 rounded">REDACTEDDDDD</span> [redacted due to child labor laws]. After that, I made pizzas at a pizzeria, chased kids around as a security guard at an elementary school, and tried to sell mattresses I knew nothing about at a furniture store.
+          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">O que eu fazia antes</div>
+          <div className="text-base md:text-lg leading-relaxed font-light text-gray-500">
+            Antes de atuar no campo editorial, desenvolvi projetos autorais que unem literatura e arte. Em 2021, publiquei de forma independente o livro “Aos olhos do coração”, concebido como um objeto artístico, experiência que me levou a compartilhar meu processo criativo em palestras sobre literatura como espaço de criação visual e sensível.
           </div>
         </div>
         {/* What I Do Now */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">What I Do Now</div>
-          <div className="text-lg leading-relaxed font-light text-gray-500">
-            Today I'm a <span className="font-semibold text-black">Product Designer</span> at{' '}
-            <a href="https://www.figma.com/" className="text-blue-600 underline hover:text-blue-800 font-semibold">Figma</a>{' '}
-            <a href="https://www.figma.com/" className="text-blue-600 hover:text-blue-800 ml-1">↗</a> designing AI experiences. Previously, I was the <span className="font-semibold text-black">Founding Product Designer</span> at{' '}
-            <a href="https://diagram.com/" className="text-blue-600 underline hover:text-blue-800 font-semibold">Diagram</a>{' '}
-            <a href="https://diagram.com/" className="text-blue-600 hover:text-blue-800 ml-1">↗</a>. Before all of that, I worked as an <span className="font-semibold text-black">Engineer</span> at{' '}
-            <a href="https://www.romanelli.com/" className="text-blue-600 underline hover:text-blue-800 font-semibold">Romanelli</a>{' '}
-            <a href="https://www.romanelli.com/" className="text-blue-600 hover:text-blue-800 ml-1">↗</a> where I learned how to code (thanks,{' '}
-            <a href="https://twitter.com/xac" className="text-blue-600 underline hover:text-blue-800 font-semibold">Zac ↗</a>) and how to stop coding (thanks, Webflow).
-          </div>
-        </div>
-        {/* Where I'm At Now */}
-        <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">Where I'm At Now</div>
-          <div className="text-lg leading-relaxed font-light text-gray-500">
-            Today, I live in San Francisco, California. When I'm not working, you can usually find me with my dog at the beach, the park, or the redwoods.
+          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">O que faço atualmente</div>
+          <div className="text-base md:text-lg leading-relaxed font-light text-gray-500">
+            Curso Letras na Universidade de São Paulo (USP), com foco na integração entre literatura, escrita e criação artística em projetos que unem texto e produção visual. Publiquei uma coletânea de contos ilustrada, assinando textos e ilustrações, e desenvolvi a identidade visual de um projeto de autobiografia linguística em italiano. Também realizei um trabalho acadêmico sobre Machado de Assis, explorando a tradução de elementos literários para a linguagem visual.
           </div>
         </div>
         {/* What I'm Looking For */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">What I'm Looking For</div>
-          <div className="text-lg leading-relaxed font-light text-gray-500">
-            Impactful, purposeful work with a diverse team of talented people. <br />
-            I also think the personal computer needs its{' '}
-            <a href="https://marcocornacchia.substack.com/p/my-dads-iphone?showWelcome=true" className="text-blue-600 underline hover:text-blue-800 font-semibold">iPhone moment</a>{' '}
-            <a href="https://marcocornacchia.substack.com/p/my-dads-iphone?showWelcome=true" className="text-blue-600 hover:text-blue-800 ml-1">↗</a>.
+          <div className="uppercase text-xs font-semibold text-gray-700 tracking-widest">O que estou procurando</div>
+          <div className="text-base md:text-lg leading-relaxed font-light text-gray-500">
+            Busco projetos e editoras focados em literatura visual, livros ilustrados, design editorial e criação autoral, em ambientes que valorizem experimentação estética.
           </div>
         </div>
       </div>
       {/* Ícones de contato (simples, sem tooltip animado) */}
       <div className="flex gap-4 mt-8">
-        <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition">
-          <img src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/63028d7724ba5803db2a7ba4_imessage-icon.svg" alt="iMessage" className="w-5 h-5" />
+        <a href="https://wa.me/5511949327035" target="_blank" rel="noopener noreferrer" className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5" />
         </a>
-        <a href="mailto:hi@marco.fyi" className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition">
+        <button
+          type="button"
+          onClick={handleCopyEmail}
+          className="cursor-pointer relative w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition focus:outline-none"
+          aria-label="Copiar email"
+        >
           <img src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/62f5dbe13ef14900c4c5e5f5_email-contact-icon.svg" alt="Email" className="w-5 h-5" />
-        </a>
-        <a href="https://read.cv/marcocornacchia" className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition">
+          {emailCopied && (
+            <span className="absolute left-1/2 -translate-x-1/2 top-10 bg-black text-white text-xs rounded px-2 py-1 shadow z-10 animate-fade-in flex flex-col items-center">
+              <span>{email} copiado</span>
+              <span className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black"></span>
+            </span>
+          )}
+        </button>
+        <a
+          href={CV_Nicolle}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 w-auto h-8 px-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
+          download
+        >
           <img src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/63110ad668b7e7e21de162de_read-cv-icon.svg" alt="CV" className="w-5 h-5" />
-        </a>
-        <a href="https://twitter.com/marcofyi" className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition">
-          <img src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/62f5dbe10a419234e527d174_twitter-contact-icon.svg" alt="Twitter" className="w-5 h-5" />
+          <span className="text-xs font-medium text-gray-700">Currículo</span>
         </a>
       </div>
     </Card>
