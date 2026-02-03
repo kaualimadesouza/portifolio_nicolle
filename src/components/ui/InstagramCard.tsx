@@ -1,7 +1,5 @@
-
 import { Card } from './Card';
 import InstagramPhoto from '../../assets/foto_instagram.jpg';
- 
 
 function InstagramCard() {
   return (
@@ -20,7 +18,7 @@ function InstagramCard() {
             />
           </div>
           <div>
-            <div className="font-semibold leading-tight text-lg text-black group-hover:text-white transition-colors duration-500">Nicolle Marinho</div>
+            <div className="font-semibold leading-tight text-lg text-black dark:text-white group-hover:text-white transition-colors duration-500">Nicolle Marinho</div>
             <div className="text-base text-gray-400 group-hover:text-pink-100 transition-colors duration-500">@entrearteselivros</div>
           </div>
         </a>
@@ -31,7 +29,7 @@ function InstagramCard() {
         </div>
       </div>
       {/* Instagram bio */}
-      <div className="relative z-10 text-base leading-relaxed mb-6 flex-1 text-black group-hover:text-white transition-colors duration-500">
+      <div className="relative z-10 text-base leading-relaxed mb-6 flex-1 text-black dark:text-white group-hover:text-white transition-colors duration-500">
         compartilhando momentos e inspirações!{' '}
         <span className="text-pink-500 group-hover:text-pink-100 transition-colors duration-500">#design</span>{' '}
         <span className="text-pink-500 group-hover:text-pink-100 transition-colors duration-500">#criatividade</span>
@@ -40,7 +38,7 @@ function InstagramCard() {
       <a
         href="https://www.instagram.com/entrearteselivros/"
         target='_blank'
-        className="relative z-10 flex items-center justify-center gap-3 w-full border border-gray-200 group-hover:border-white rounded-full py-3 px-6 bg-white group-hover:bg-transparent transition-all duration-500 text-base font-semibold text-black group-hover:text-white hover:opacity-70"
+        className="relative z-10 flex items-center justify-center gap-3 w-full border border-gray-200 dark:border-zinc-700 group-hover:border-white rounded-full py-3 px-6 bg-white dark:bg-zinc-800 group-hover:bg-transparent transition-all duration-500 text-base font-semibold text-black dark:text-white group-hover:text-white hover:opacity-70"
       >
         Ver perfil
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

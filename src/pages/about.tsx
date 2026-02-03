@@ -7,7 +7,7 @@ import LinkedinCard from '../components/ui/LinkedinCard';
 
 function About() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <Navigation />
       {/* Main Content */}
       <div className="pt-20 pb-24 lg:pt-40 lg:pb-32 px-4 md:px-8 lg:px-0">
@@ -39,7 +39,7 @@ function About() {
                 </div>
               </div> */}
               {/* Card 5 - Retangular (ocupa 2 colunas) */}
-              <div className="col-span-2 bg-gray-100 rounded-3xl p-6 flex items-center justify-center w-full h-full">
+              <div className="col-span-2 bg-gray-100 dark:bg-zinc-900 rounded-3xl p-6 flex items-center justify-center w-full h-full transition-colors duration-300">
               </div>
             </div>
           </div>

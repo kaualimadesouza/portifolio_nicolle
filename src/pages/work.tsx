@@ -25,7 +25,7 @@ function Work() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <Navigation />
       {/* Main Content */}
       <div className="pb-24 lg:pt-[165px] lg:pb-32 px-4 md:px-8 lg:px-0">
