@@ -7,7 +7,7 @@ function Contact() {
       <Navigation />
 
       {/* Main Content */}
-      <div className="pt-24 pb-32 lg:pt-32 lg:pb-40 px-4 md:px-8">
+      <div className="pt-28 pb-24 lg:pt-28 lg:pb-32 px-4 md:px-8 lg:px-0">
         <div className="max-w-4xl mx-auto">
           {/* Chat Interface */}
           <div className="mb-6">

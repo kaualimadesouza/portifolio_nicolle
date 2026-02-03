@@ -15,7 +15,7 @@ function Home() {
       <Navigation />
 
       {/* Main Content */}
-      <div className="pt-24 pb-16 px-4 md:px-8">
+      <div className="pt-28 pb-24 lg:pt-28 lg:pb-32 px-4 md:px-8 lg:px-0">
         <div className="max-w-6xl mx-auto">
 
           {/* Bento Grid Layout */}

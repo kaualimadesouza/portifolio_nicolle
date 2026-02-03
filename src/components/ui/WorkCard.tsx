@@ -20,7 +20,7 @@ function WorkCard({
 }: WorkCardProps) {
   return (
     <div
-      className={`relative rounded-2xl shadow-lg overflow-hidden group flex flex-col w-full lg:w-2xl aspect-square bg-[#F7F7F9] dark:bg-zinc-900 mt-8 transition-all duration-300 ${isFocused === false ? 'opacity-10 pointer-events-none' : 'opacity-100'}`}
+      className={`relative rounded-2xl shadow-lg overflow-hidden group flex flex-col w-full lg:w-2xl aspect-square bg-[#F7F7F9] dark:bg-zinc-900 transition-all duration-300 ${isFocused === false ? 'opacity-10 pointer-events-none' : 'opacity-100'}`}
     >
       {/* Left: Main Info */}
       <div className="flex justify-between px-8 pt-8">

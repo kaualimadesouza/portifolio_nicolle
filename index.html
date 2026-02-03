@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en" style="background-color: #ffffff;">
   <head>
+    <script>
+      // Evita flash branco: aplica dark mode imediatamente se já estiver salvo
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -10,7 +10,7 @@ function About() {
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <Navigation />
       {/* Main Content */}
-      <div className="pt-20 pb-24 lg:pt-40 lg:pb-32 px-4 md:px-8 lg:px-0">
+      <div className="pt-28 pb-24 lg:pt-28 lg:pb-32 px-4 md:px-8 lg:px-0">
         <div className="max-w-[1400px] mx-auto">
           {/* Grid principal - 2 colunas com alturas iguais */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
