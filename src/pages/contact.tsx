@@ -7,7 +7,7 @@ function Contact() {
       <Navigation />
 
       {/* Main Content */}
-      <div className="pt-28 pb-24 lg:pt-28 lg:pb-32 px-4 md:px-8 lg:px-0">
+      <div className="pt-6 pb-28 md:pt-28 md:pb-24 lg:pt-28 lg:pb-32 px-4 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           {/* Contact Info Card */}
           <div className="mb-6">
@@ -15,11 +15,11 @@ function Contact() {
           </div>
 
           {/* Social Cards Section */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <div className="w-82 h-82">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <div className="w-full sm:w-72 md:w-82 h-72 sm:h-82">
               <InstagramCard />
             </div>
-            <div className="w-82 h-82">
+            <div className="w-full sm:w-72 md:w-82 h-72 sm:h-82">
               <LinkedinCard />
             </div>
           </div>

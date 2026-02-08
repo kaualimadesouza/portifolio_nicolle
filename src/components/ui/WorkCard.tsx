@@ -51,15 +51,6 @@ const positionClasses = {
   right: 'object-right',
 };
 
-const roundedClasses = {
-  none: 'rounded-none',
-  sm: 'rounded-sm',
-  md: 'rounded-md',
-  lg: 'rounded-lg sm:rounded-xl',
-  xl: 'rounded-xl sm:rounded-2xl',
-  full: 'rounded-full',
-};
-
 const shadowClasses = {
   none: 'shadow-none',
   sm: 'shadow-sm',
@@ -82,7 +73,6 @@ function WorkCard({
     size = 'md',
     fit = 'contain',
     position = 'center',
-    rounded = 'lg',
     shadow = 'md',
     className: customClassName = '',
   } = imageConfig;

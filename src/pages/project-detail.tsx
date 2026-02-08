@@ -75,7 +75,7 @@ function ProjectDetail() {
       <Navigation />
       
       {/* Main Content */}
-      <div className="pt-24 sm:pt-28 pb-16 sm:pb-24 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
+      <div className="pt-6 pb-28 sm:pt-8 md:pt-28 md:pb-24 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
         <div className="max-w-5xl mx-auto">
           
           {/* Hero Section */}

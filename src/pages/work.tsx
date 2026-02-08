@@ -42,7 +42,7 @@ function Work() {
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <Navigation />
       {/* Main Content */}
-      <div className="pt-20 pb-16 sm:pt-24 sm:pb-20 md:pt-28 md:pb-24 lg:pt-28 lg:pb-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="pt-6 pb-28 sm:pt-8 md:pt-28 md:pb-24 lg:pt-28 lg:pb-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="w-full max-w-3xl xl:max-w-7xl mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {cards.map((card, idx) => (

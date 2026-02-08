@@ -3,33 +3,33 @@ import InstagramPhoto from '../../assets/foto_instagram.jpg';
 
 function InstagramCard() {
   return (
-    <Card className="group relative w-full h-full overflow-hidden p-7 flex flex-col border border-pink-100 dark:border-zinc-700">
+    <Card className="group relative w-full h-full overflow-hidden p-4 sm:p-5 md:p-7 flex flex-col border border-pink-100 dark:border-zinc-700">
       {/* Background gradiente que preenche o card inteiro a partir do canto superior direito */}
       <div className="absolute inset-0 bg-pink-500 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-right pointer-events-none rounded-xl"></div>
 
       {/* Top: Profile */}
-      <div className="relative z-10 flex items-center justify-between mb-5">
-        <a href="https://instagram.com/nicollemarinho" className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-full overflow-hidden">
+      <div className="relative z-10 flex items-center justify-between mb-3 sm:mb-5">
+        <a href="https://instagram.com/nicollemarinho" className="flex items-center gap-2 sm:gap-4">
+          <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden shrink-0">
             <img
               src={InstagramPhoto}
               alt="Nicolle Marinho"
               className="w-full h-full object-cover"
             />
           </div>
-          <div>
-            <div className="font-semibold leading-tight text-lg text-black dark:text-white group-hover:text-white transition-colors duration-500">Nicolle Marinho</div>
-            <div className="text-base text-gray-400 group-hover:text-pink-100 transition-colors duration-500">@entrearteselivros</div>
+          <div className="min-w-0">
+            <div className="font-semibold leading-tight text-sm sm:text-lg text-black dark:text-white group-hover:text-white transition-colors duration-500 truncate">Nicolle Marinho</div>
+            <div className="text-xs sm:text-base text-gray-400 group-hover:text-pink-100 transition-colors duration-500 truncate">@entrearteselivros</div>
           </div>
         </a>
-        <div className="w-10 h-10 flex items-center justify-center">
-          <svg className="w-7 h-7 text-pink-500 group-hover:text-white transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shrink-0">
+          <svg className="w-5 h-5 sm:w-7 sm:h-7 text-pink-500 group-hover:text-white transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
             <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm5.5 1.25a1 1 0 110 2 1 1 0 010-2z" />
           </svg>
         </div>
       </div>
       {/* Instagram bio */}
-      <div className="relative z-10 text-base leading-relaxed mb-6 flex-1 text-black dark:text-white group-hover:text-white transition-colors duration-500">
+      <div className="relative z-10 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 flex-1 text-black dark:text-white group-hover:text-white transition-colors duration-500">
         compartilhando momentos e inspirações!{' '}
         <span className="text-pink-500 group-hover:text-pink-100 transition-colors duration-500">#design</span>{' '}
         <span className="text-pink-500 group-hover:text-pink-100 transition-colors duration-500">#criatividade</span>
@@ -38,10 +38,10 @@ function InstagramCard() {
       <a
         href="https://www.instagram.com/entrearteselivros/"
         target='_blank'
-        className="relative z-10 flex items-center justify-center gap-3 w-full border border-gray-200 dark:border-zinc-700 group-hover:border-white rounded-full py-3 px-6 bg-white dark:bg-zinc-800 group-hover:bg-transparent transition-all duration-500 text-base font-semibold text-black dark:text-white group-hover:text-white hover:opacity-70"
+        className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 w-full border border-gray-200 dark:border-zinc-700 group-hover:border-white rounded-full py-2.5 sm:py-3 px-4 sm:px-6 bg-white dark:bg-zinc-800 group-hover:bg-transparent transition-all duration-500 text-sm sm:text-base font-semibold text-black dark:text-white group-hover:text-white hover:opacity-70"
       >
         Ver perfil
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
         </svg>
       </a>
