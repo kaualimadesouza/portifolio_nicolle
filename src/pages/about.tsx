@@ -22,7 +22,7 @@ function About() {
             
             {/* Right Column - Grid de Cards Menores */}
             <div className="flex flex-col gap-4">
-              <div className="grid grid-cols-2 gap-4 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                 <div className="h-64 sm:h-72 md:h-80">
                   <InstagramCard />
                 </div>
