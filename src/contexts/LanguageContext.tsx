@@ -97,6 +97,15 @@ const translations: Record<Language, Record<string, string>> = {
     'work.ic.description': 'Pesquisa acadêmica desenvolvida durante a graduação em Letras na USP.',
     'project.ic': 'Iniciação Científica',
     'project.research': 'Pesquisa Acadêmica',
+    'work.diagramacao.subtitle': 'Design editorial para material didático',
+    'work.diagramacao.description': 'Diagramação de apostilas para ensino fundamental.',
+    'project.diagramacao': 'Diagramação Apostilas',
+    'work.italiano.subtitle': 'Autobiografia linguística em italiano',
+    'work.italiano.description': 'Projeto de identidade visual para autobiografia linguística em italiano.',
+    'project.italiano': 'Italiano',
+    'work.villare.subtitle': 'Organização de amostra literária',
+    'work.villare.description': 'Organização da amostra de minicontos ilustrados Villare.',
+    'project.villare': 'Amostra Minicontos Villare',
     
     // Social
     'social.bio.instagram': 'compartilhando momentos e inspirações!',
@@ -186,6 +195,15 @@ const translations: Record<Language, Record<string, string>> = {
     'work.ic.description': 'Academic research developed during the Literature degree at USP.',
     'project.ic': 'Undergraduate Research',
     'project.research': 'Academic Research',
+    'work.diagramacao.subtitle': 'Editorial design for educational materials',
+    'work.diagramacao.description': 'Layout design for elementary school workbooks.',
+    'project.diagramacao': 'Workbook Layout',
+    'work.italiano.subtitle': 'Linguistic autobiography in Italian',
+    'work.italiano.description': 'Visual identity project for linguistic autobiography in Italian.',
+    'project.italiano': 'Italian',
+    'work.villare.subtitle': 'Literary showcase organization',
+    'work.villare.description': 'Organization of Villare illustrated micro-stories showcase.',
+    'project.villare': 'Villare Micro-stories Showcase',
     
     // Social
     'social.bio.instagram': 'sharing moments and inspirations!',

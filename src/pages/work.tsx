@@ -5,7 +5,8 @@ import AosOlhosDoCoracaoIMG from '../assets/aos_olhos_do_coração.jpg';
 import ContosEmPretoEBrancoIMG from '../assets/contos_em_preto_e_branco.png';
 import FuturoDoPreterito from '../assets/14_futuro_preterito.png';
 import MachadoIMG from '../assets/machado.jpeg';
-import FotoInstagramIMG from '../assets/foto_instagram.jpg';
+import ICIMG from '../assets/ic.jpeg';
+import PlaceholderIMG from '../assets/foto_instagram.jpg'; // TODO: substituir pelas imagens corretas
 import { useLanguage } from '../contexts/LanguageContext';
 
 function Work() {
@@ -73,8 +74,50 @@ function Work() {
       title: t('project.ic'),
       subtitle: t('work.ic.subtitle'),
       description: t('work.ic.description'),
-      image: FotoInstagramIMG,
+      image: ICIMG,
       link: "/work/iniciacao-cientifica",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'cover' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl',
+      },
+    },
+    {
+      title: t('project.diagramacao'),
+      subtitle: t('work.diagramacao.subtitle'),
+      description: t('work.diagramacao.description'),
+      image: PlaceholderIMG, // TODO: substituir pela imagem correta
+      link: "/work/diagramacao-apostilas",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'cover' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl',
+      },
+    },
+    {
+      title: t('project.italiano'),
+      subtitle: t('work.italiano.subtitle'),
+      description: t('work.italiano.description'),
+      image: PlaceholderIMG, // TODO: substituir pela imagem correta
+      link: "/work/italiano",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'cover' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl',
+      },
+    },
+    {
+      title: t('project.villare'),
+      subtitle: t('work.villare.subtitle'),
+      description: t('work.villare.description'),
+      image: PlaceholderIMG, // TODO: substituir pela imagem correta
+      link: "/work/amostra-minicontos-villare",
       imageConfig: {
         size: 'full' as const,
         fit: 'cover' as const,

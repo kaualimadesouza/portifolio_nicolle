@@ -98,6 +98,51 @@ const projects: Record<string, ProjectData> = {
     caseStudyLink: "ic",
     isDownload: true
   },
+  "diagramacao-apostilas": {
+    title: "Diagramação Apostilas",
+    subtitle: "Design Editorial Freelance",
+    role: ["Designer"], // TODO: ajustar funções
+    tools: ["Design Editorial", "InDesign"], // TODO: ajustar ferramentas
+    timeline: "2024", // TODO: ajustar período
+    description: "Diagramação de apostilas para ensino fundamental.",
+    context: [
+      "TODO: Adicionar primeiro parágrafo de contexto sobre o projeto de diagramação de apostilas.",
+      "TODO: Adicionar segundo parágrafo descrevendo o processo criativo e os desafios.",
+      "TODO: Adicionar terceiro parágrafo sobre os resultados e aprendizados."
+    ],
+    images: [],
+    caseStudyLink: undefined // TODO: adicionar link ou PDF se houver
+  },
+  "italiano": {
+    title: "Italiano",
+    subtitle: "Autobiografia Linguística",
+    role: ["Designer", "Ilustradora"], // TODO: ajustar funções
+    tools: ["Design Editorial", "Ilustração"], // TODO: ajustar ferramentas
+    timeline: "2024", // TODO: ajustar período
+    description: "Projeto de identidade visual para autobiografia linguística em italiano.",
+    context: [
+      "TODO: Adicionar primeiro parágrafo de contexto sobre o projeto de autobiografia linguística em italiano.",
+      "TODO: Adicionar segundo parágrafo descrevendo o processo criativo e a conexão com a língua italiana.",
+      "TODO: Adicionar terceiro parágrafo sobre os resultados e a experiência."
+    ],
+    images: [],
+    caseStudyLink: undefined // TODO: adicionar link ou PDF se houver
+  },
+  "amostra-minicontos-villare": {
+    title: "Amostra Minicontos Villare",
+    subtitle: "Organização de Evento Literário",
+    role: ["Organizadora", "Curadora"], // TODO: ajustar funções
+    tools: ["Curadoria", "Produção de Eventos"], // TODO: ajustar ferramentas
+    timeline: "2024", // TODO: ajustar período
+    description: "Organização da amostra de minicontos ilustrados Villare.",
+    context: [
+      "TODO: Adicionar primeiro parágrafo de contexto sobre a amostra de minicontos ilustrados.",
+      "TODO: Adicionar segundo parágrafo descrevendo o processo de organização e curadoria.",
+      "TODO: Adicionar terceiro parágrafo sobre o impacto do evento e os resultados."
+    ],
+    images: [],
+    caseStudyLink: undefined // TODO: adicionar link ou PDF se houver
+  },
 };
 
 function ProjectDetail() {
