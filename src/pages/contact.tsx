@@ -1,4 +1,4 @@
-import { Navigation, ChatInterface, InstagramCard } from '../components/ui';
+import { Navigation, ContactInfoCard, InstagramCard } from '../components/ui';
 import { LinkedinCard } from '../components/ui/LinkedinCard';
 
 function Contact() {
@@ -9,9 +9,9 @@ function Contact() {
       {/* Main Content */}
       <div className="pt-28 pb-24 lg:pt-28 lg:pb-32 px-4 md:px-8 lg:px-0">
         <div className="max-w-4xl mx-auto">
-          {/* Chat Interface */}
+          {/* Contact Info Card */}
           <div className="mb-6">
-            <ChatInterface />
+            <ContactInfoCard />
           </div>
 
           {/* Social Cards Section */}

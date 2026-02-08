@@ -2,7 +2,7 @@ import { Card } from './Card';
 
 function LinkedinCard() {
   return (
-    <Card className="group relative w-full h-full overflow-hidden p-7 flex flex-col">
+    <Card className="group relative w-full h-full overflow-hidden p-7 flex flex-col border border-pink-100 dark:border-zinc-700">
       {/* Background azul que preenche o card inteiro a partir do canto superior direito */}
       <div className="absolute inset-0 bg-[#0077b5] transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-right pointer-events-none rounded-2xl"></div>
 
