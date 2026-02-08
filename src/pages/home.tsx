@@ -26,8 +26,8 @@ function Home() {
           {/* Grid principal - 2 colunas */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
 
-            {/* Left Column - Hero Card */}
-            <div className="rounded-3xl flex flex-col">
+            {/* Left Column - Hero Card + Contact CTA */}
+            <div className="flex flex-col gap-4">
               <Card className="p-6 sm:p-8 md:p-10">
                 <div className="flex flex-col h-full">
                   {/* Profile Header */}
@@ -82,6 +82,29 @@ function Home() {
                   </div>
                 </div>
               </Card>
+
+              {/* Contact CTA Card */}
+              <Link to="/contact" className="group">
+                <Card className="p-4 sm:p-6 md:p-8 h-full overflow-hidden relative">
+                  <div className="absolute inset-0 bg-linear-to-r from-pink-500 to-purple-500 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-left"></div>
+                  
+                  <div className="relative z-10 flex items-center justify-between gap-4">
+                    <div className="min-w-0">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black dark:text-white group-hover:text-white transition-colors duration-500 mb-1 sm:mb-2">
+                        {t('home.contact.title')}
+                      </h3>
+                      <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors duration-500 truncate">
+                        {t('home.contact.subtitle')}
+                      </p>
+                    </div>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-100 dark:bg-zinc-800 group-hover:bg-white/20 flex items-center justify-center transition-colors duration-500 shrink-0">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
             </div>
 
             {/* Right Column - Grid de Cards Menores */}
@@ -180,29 +203,6 @@ function Home() {
                   <LinkedinCard />
                 </div>
               </div>
-
-              {/* Contact CTA Card */}
-              <Link to="/contact" className="group">
-                <Card className="p-4 sm:p-6 md:p-8 h-full overflow-hidden relative">
-                  <div className="absolute inset-0 bg-linear-to-r from-pink-500 to-purple-500 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-left"></div>
-                  
-                  <div className="relative z-10 flex items-center justify-between gap-4">
-                    <div className="min-w-0">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black dark:text-white group-hover:text-white transition-colors duration-500 mb-1 sm:mb-2">
-                        {t('home.contact.title')}
-                      </h3>
-                      <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors duration-500 truncate">
-                        {t('home.contact.subtitle')}
-                      </p>
-                    </div>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-100 dark:bg-zinc-800 group-hover:bg-white/20 flex items-center justify-center transition-colors duration-500 shrink-0">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </div>
-                  </div>
-                </Card>
-              </Link>
             </div>
 
           </div>
