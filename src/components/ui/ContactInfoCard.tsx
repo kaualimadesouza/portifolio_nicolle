@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import CV from '../../assets/CV_Nicolle.pdf';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 function ContactInfoCard() {
   const [copied, setCopied] = useState(false);
   const email = "nicollemarinhomartins@gmail.com";
+  const { t } = useLanguage();
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -21,10 +23,10 @@ function ContactInfoCard() {
           </div>
           <div>
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
-              Vamos conversar?
+              {t('contact.title')}
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
-              Estou disponível para novos projetos
+              {t('contact.subtitle')}
             </p>
           </div>
         </div>
@@ -32,7 +34,7 @@ function ContactInfoCard() {
         {/* Message */}
         <div className="mb-6 sm:mb-8">
           <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
-            Aberta a conversas e propostas! 💜
+            {t('contact.message')}
           </p>
         </div>
 
@@ -47,14 +49,14 @@ function ContactInfoCard() {
                 <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-green-500 font-medium text-sm sm:text-base">Copiado!</span>
+                <span className="text-green-500 font-medium text-sm sm:text-base">{t('contact.copied')}</span>
               </>
             ) : (
               <>
                 <svg className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-pink-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-gray-700 dark:text-gray-200 font-medium text-sm sm:text-base">Copiar e-mail</span>
+                <span className="text-gray-700 dark:text-gray-200 font-medium text-sm sm:text-base">{t('contact.copy')}</span>
               </>
             )}
           </button>
@@ -80,7 +82,7 @@ function ContactInfoCard() {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              <span className="font-medium text-sm sm:text-base">Currículo</span>
+              <span className="font-medium text-sm sm:text-base">{t('contact.cv')}</span>
             </a>
           </div>
         </div>

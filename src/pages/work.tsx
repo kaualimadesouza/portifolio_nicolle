@@ -3,15 +3,17 @@ import WorkCard from '../components/ui/WorkCard';
 import { useState } from 'react';
 import AosOlhosDoCoracaoIMG from '../assets/aos_olhos_do_coração.jpg';
 import ContosEmPretoEBrancoIMG from '../assets/contos_em_preto_e_branco.png';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function Work() {
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const cards = [
     {
-      title: "Aos Olhos do Coração",
-      subtitle: "Um livro de poesias e reflexões sobre amor e vida",
-      description: "Uma obra literária que explora as profundezas do coração humano através de poesias e reflexões.",
+      title: t('project.aos_olhos'),
+      subtitle: t('work.aos_olhos.subtitle'),
+      description: t('work.aos_olhos.description'),
       image: AosOlhosDoCoracaoIMG,
       link: "/work/aos-olhos-do-coracao",
       imageConfig: {
@@ -23,9 +25,9 @@ function Work() {
       },
     },
     {
-      title: "Contos em Preto e Branco",
-      subtitle: "Contos que exploram os detalhes sutis da vida",
-      description: "Uma coleção de contos que costura com delicadeza memórias, partidas e retornos.",
+      title: t('project.contos'),
+      subtitle: t('work.contos.subtitle'),
+      description: t('work.contos.description'),
       image: ContosEmPretoEBrancoIMG,
       link: "/work/contos-em-preto-e-branco",
       imageConfig: {

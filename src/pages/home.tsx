@@ -10,8 +10,11 @@ import {
 import ProfilePhoto from '../assets/foto_instagram.jpg';
 import AosOlhosImg from '../assets/aos_olhos_do_coração.jpg';
 import ContosImg from '../assets/contos_em_preto_e_branco.png';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function Home() {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <Navigation />
@@ -35,10 +38,10 @@ function Home() {
                   />
                   <div>
                     <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black dark:text-white">
-                      Nicolle Marinho
+                      {t('home.title')}
                     </h1>
                     <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-lg">
-                      Escritora & Designer Editorial
+                      {t('home.subtitle')}
                     </p>
                   </div>
                 </div>
@@ -48,15 +51,13 @@ function Home() {
                 {/* Bio */}
                 <div className="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
                   <p>
-                    Sou graduanda em <span className="text-black dark:text-white font-medium">Letras pela USP</span> e 
-                    trabalho na interseção entre <span className="text-pink-500">literatura</span>, 
-                    <span className="text-purple-500"> ilustração</span> e 
-                    <span className="text-violet-500"> design editorial</span>.
+                    {t('home.bio1')} <span className="text-black dark:text-white font-medium">{t('home.bio1.highlight')}</span> {t('home.bio1.end')}{' '}
+                    <span className="text-pink-500">{t('home.literature')}</span>,
+                    <span className="text-purple-500"> {t('home.illustration')}</span> e 
+                    <span className="text-violet-500"> {t('home.editorial')}</span>.
                   </p>
                   <p className="hidden sm:block">
-                    Acredito na escrita como um campo expandido que envolve imagem, composição e a 
-                    materialidade do livro. Meu processo criativo sempre esteve ligado à produção 
-                    de imagens e ao pensamento visual.
+                    {t('home.bio2')}
                   </p>
                 </div>
 
@@ -66,7 +67,7 @@ function Home() {
                     to="/work" 
                     className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium text-sm sm:text-base hover:opacity-80 transition-opacity"
                   >
-                    Ver trabalhos
+                    {t('home.cta.work')}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -75,7 +76,7 @@ function Home() {
                     to="/about" 
                     className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 border border-gray-200 dark:border-zinc-700 text-black dark:text-white rounded-full font-medium text-sm sm:text-base hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors"
                   >
-                    Sobre mim
+                    {t('home.cta.about')}
                   </Link>
                 </div>
               </div>
@@ -100,7 +101,7 @@ function Home() {
                   <div className="relative z-10 p-4 sm:p-6 flex flex-col h-full">
                     <div className="flex items-start justify-between mb-3 sm:mb-4">
                       <span className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500 group-hover:text-white/70 transition-colors duration-500">
-                        Livro
+                        {t('project.book')}
                       </span>
                       <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -110,17 +111,18 @@ function Home() {
                     <div className="flex-1 flex items-center justify-center py-2 sm:py-4">
                       <img 
                         src={AosOlhosImg} 
-                        alt="Aos Olhos do Coração" 
+                        alt={t('project.aos_olhos')} 
                         className="max-h-28 sm:max-h-40 object-contain rounded-lg shadow-lg bg-white p-2"
+                        loading="lazy"
                       />
                     </div>
                     
                     <div className="mt-auto">
                       <h3 className="text-base sm:text-lg font-bold text-black dark:text-white group-hover:text-white transition-colors duration-500 mb-1">
-                        Aos Olhos do Coração
+                        {t('project.aos_olhos')}
                       </h3>
                       <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors duration-500">
-                        Poesias e reflexões
+                        {t('project.poetry')}
                       </p>
                     </div>
                   </div>
@@ -138,15 +140,16 @@ function Home() {
                     <div className="flex items-center gap-3 sm:gap-4">
                       <img 
                         src={ContosImg} 
-                        alt="Contos em Preto e Branco" 
+                        alt={t('project.contos')} 
                         className="w-12 h-16 sm:w-16 sm:h-20 object-contain rounded bg-white p-1"
+                        loading="lazy"
                       />
                       <div className="flex-1 min-w-0">
                         <span className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500 group-hover:text-white/70 transition-colors duration-500">
-                          Contos
+                          {t('project.tales')}
                         </span>
                         <h3 className="text-sm sm:text-base font-bold text-black dark:text-white group-hover:text-white transition-colors duration-500 truncate">
-                          Contos em Preto e Branco
+                          {t('project.contos')}
                         </h3>
                       </div>
                       <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-500 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -176,10 +179,10 @@ function Home() {
                 <div className="relative z-10 flex items-center justify-between gap-4">
                   <div className="min-w-0">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black dark:text-white group-hover:text-white transition-colors duration-500 mb-1 sm:mb-2">
-                      Vamos conversar? 💜
+                      {t('home.contact.title')}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors duration-500 truncate">
-                      Aberta a conversas e propostas de projetos
+                      {t('home.contact.subtitle')}
                     </p>
                   </div>
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-100 dark:bg-zinc-800 group-hover:bg-white/20 flex items-center justify-center transition-colors duration-500 shrink-0">

@@ -1,6 +1,9 @@
 import { Card } from './Card';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 function LocationCard() {
+  const { t } = useLanguage();
+  
   return (
     <Card className="p-6 h-full flex flex-col justify-between">
       <div className="flex items-center gap-3 mb-4">
@@ -10,11 +13,11 @@ function LocationCard() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </div>
-        <span className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500">Localizado em</span>
+        <span className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500">{t('location.label')}</span>
       </div>
       <div>
         <h3 className="text-xl font-semibold text-black dark:text-white mb-1">
-          São Paulo, Brasil
+          {t('location.city')}
         </h3>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           UTC-3 (BRT)

@@ -120,10 +120,10 @@ function WorkCard({
         <div className="w-full h-full flex items-center justify-center px-4 sm:px-6 md:px-8">
           {image ? (
             <div className="overflow-hidden rounded-2xl h-full flex items-center justify-center">
-              <img src={image} alt={title + ' preview'} className={imageClasses} />
+              <img src={image} alt={title + ' preview'} className={imageClasses} loading="lazy" />
             </div>
           ) : icon ? (
-            <img src={icon} alt={title + ' icon'} className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-contain" />
+            <img src={icon} alt={title + ' icon'} className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-contain" loading="lazy" />
           ) : null}
         </div>
       </div>

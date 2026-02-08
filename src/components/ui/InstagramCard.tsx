@@ -15,6 +15,7 @@ function InstagramCard() {
               src={InstagramPhoto}
               alt="Nicolle Marinho"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           <div className="min-w-0">

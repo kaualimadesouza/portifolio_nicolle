@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import CV_Nicolle from '../../assets/CV_Nicolle.pdf';
 import { Card } from './Card';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 function AboutMeCard() {
   const [emailCopied, setEmailCopied] = useState(false);
   const email = "nicollemarinhomartins@gmail.com";
+  const { t } = useLanguage();
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -14,36 +16,36 @@ function AboutMeCard() {
   return (
     <Card className="p-6 md:p-8 w-full h-full">
       <h1 className="text-2xl md:text-3xl font-medium mb-4 md:mb-6 leading-tight tracking-tight">
-        <span className="font-bold text-black dark:text-white">Sobre mim.</span>
+        <span className="font-bold text-black dark:text-white">{t('about.title')}</span>
       </h1>
       <div className="h-px bg-black/10 dark:bg-white/10 mb-6 md:mb-8"></div>
       <div className="space-y-6 md:space-y-8">
         {/* Where I'm From */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">De onde eu venho</div>
+          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">{t('about.where')}</div>
           <div className="text-base md:text-lg leading-relaxed font-light text-gray-500 dark:text-gray-400">
-            Sou graduanda em Letras pela USP e moro em São Bernardo do Campo (SP). Minha formação integra literatura e ilustração, e entendo a escrita como um campo expandido que envolve imagem, composição e a materialidade do livro. Meu processo criativo sempre esteve ligado à produção de imagens e ao pensamento visual.
+            {t('about.where.text')}
           </div>
         </div>
         {/* What I used to Do */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">O que eu fazia antes</div>
+          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">{t('about.before')}</div>
           <div className="text-base md:text-lg leading-relaxed font-light text-gray-500 dark:text-gray-400">
-            Antes de atuar no campo editorial, desenvolvi projetos autorais que unem literatura e arte. Em 2021, publiquei de forma independente o livro "Aos olhos do coração", concebido como um objeto artístico, experiência que me levou a compartilhar meu processo criativo em palestras sobre literatura como espaço de criação visual e sensível.
+            {t('about.before.text')}
           </div>
         </div>
         {/* What I Do Now */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">O que faço atualmente</div>
+          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">{t('about.now')}</div>
           <div className="text-base md:text-lg leading-relaxed font-light text-gray-500 dark:text-gray-400">
-            Curso Letras na Universidade de São Paulo (USP), com foco na integração entre literatura, escrita e criação artística em projetos que unem texto e produção visual. Publiquei uma coletânea de contos ilustrada, assinando textos e ilustrações, e desenvolvi a identidade visual de um projeto de autobiografia linguística em italiano. Também realizei um trabalho acadêmico sobre Machado de Assis, explorando a tradução de elementos literários para a linguagem visual.
+            {t('about.now.text')}
           </div>
         </div>
         {/* What I'm Looking For */}
         <div className="space-y-2">
-          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">O que estou procurando</div>
+          <div className="uppercase text-xs font-semibold text-gray-700 dark:text-gray-300 tracking-widest">{t('about.looking')}</div>
           <div className="text-base md:text-lg leading-relaxed font-light text-gray-500 dark:text-gray-400">
-            Busco projetos e editoras focados em literatura visual, livros ilustrados, design editorial e criação autoral, em ambientes que valorizem experimentação estética.
+            {t('about.looking.text')}
           </div>
         </div>
       </div>
@@ -61,7 +63,7 @@ function AboutMeCard() {
           <img src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/62f5dbe13ef14900c4c5e5f5_email-contact-icon.svg" alt="Email" className="w-5 h-5 dark:invert" />
           {emailCopied && (
             <span className="absolute left-1/2 -translate-x-1/2 top-10 bg-black dark:bg-white text-white dark:text-black text-xs rounded px-2 py-1 shadow z-10 animate-fade-in flex flex-col items-center">
-              <span>{email} copiado</span>
+              <span>{email} {t('about.email.copied')}</span>
             </span>
           )}
         </button>
@@ -73,7 +75,7 @@ function AboutMeCard() {
           download
         >
           <img src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/63110ad668b7e7e21de162de_read-cv-icon.svg" alt="CV" className="w-5 h-5 dark:invert" />
-          <span className="text-xs font-medium text-gray-700 dark:text-gray-300">Currículo</span>
+          <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{t('contact.cv')}</span>
         </a>
       </div>
     </Card>

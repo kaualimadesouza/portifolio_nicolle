@@ -14,6 +14,7 @@ function LinkedinCard() {
               src="https://media.licdn.com/dms/image/v2/D5603AQFvHl6ohu6KWQ/profile-displayphoto-shrink_400_400/B56ZUGh1nLHoAo-/0/1739571289700?e=1771459200&v=beta&t=X_LQQ4GWEAv-A9GtdCt_kArlDST_NAGChWqLvO4lMw4"
               alt="Nicolle Marinho"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           <div className="min-w-0">
