@@ -1,6 +1,7 @@
 import { Navigation } from '../components/ui';
 import { useParams, Link } from 'react-router-dom';
 import MachadoPDF from '../assets/MACHADO DE ASSIS E O FEMININO_.pdf';
+import ICPDF from '../assets/Ensaio final IC (2024).pdf';
 
 interface ProjectData {
   title: string;
@@ -70,7 +71,7 @@ const projects: Record<string, ProjectData> = {
     subtitle: "Trabalho Acadêmico",
     role: ["Pesquisadora", "Ilustradora"],
     tools: ["Pesquisa Literária", "Ilustração", "Design Editorial"],
-    timeline: "2024",
+    timeline: "2025",
     description: "Análise visual e literária das representações do feminino na obra de Machado de Assis.",
     context: [
       "Este trabalho acadêmico explora as representações femininas na obra de Machado de Assis, um dos maiores escritores da literatura brasileira.",
@@ -79,6 +80,22 @@ const projects: Record<string, ProjectData> = {
     ],
     images: [],
     caseStudyLink: "/assets/MACHADO DE ASSIS E O FEMININO_.pdf",
+    isDownload: true
+  },
+  "iniciacao-cientifica": {
+    title: "Iniciação Científica",
+    subtitle: "Pesquisa Acadêmica",
+    role: ["Pesquisadora", "Autora"],
+    tools: ["Pesquisa Literária", "Análise Textual", "Escrita Acadêmica"],
+    timeline: "2024",
+    description: "Pesquisa acadêmica desenvolvida durante a graduação em Letras na USP.",
+    context: [
+      "A Iniciação Científica é uma modalidade de pesquisa acadêmica voltada para estudantes de graduação, oferecendo a oportunidade de desenvolvimento de habilidades de investigação científica.",
+      "Este projeto foi desenvolvido durante minha graduação em Letras na Universidade de São Paulo, sob orientação de professores do departamento.",
+      "A pesquisa explora temas relacionados à literatura, língua e cultura, contribuindo para minha formação como pesquisadora e escritora."
+    ],
+    images: [],
+    caseStudyLink: "ic",
     isDownload: true
   },
 };
@@ -179,8 +196,8 @@ function ProjectDetail() {
             <div className="mb-8 sm:mb-12">
               {project.isDownload ? (
                 <a
-                  href={MachadoPDF}
-                  download="MACHADO DE ASSIS E O FEMININO.pdf"
+                  href={slug === 'machado-de-assis-e-o-feminino' ? MachadoPDF : ICPDF}
+                  download={slug === 'machado-de-assis-e-o-feminino' ? 'MACHADO DE ASSIS E O FEMININO.pdf' : 'Ensaio final IC (2024).pdf'}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:opacity-80 transition-opacity"
                 >
                   Baixar PDF

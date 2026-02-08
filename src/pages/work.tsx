@@ -5,6 +5,7 @@ import AosOlhosDoCoracaoIMG from '../assets/aos_olhos_do_coração.jpg';
 import ContosEmPretoEBrancoIMG from '../assets/contos_em_preto_e_branco.png';
 import FuturoDoPreterito from '../assets/14_futuro_preterito.png';
 import MachadoIMG from '../assets/machado.jpeg';
+import FotoInstagramIMG from '../assets/foto_instagram.jpg';
 import { useLanguage } from '../contexts/LanguageContext';
 
 function Work() {
@@ -66,6 +67,20 @@ function Work() {
         rounded: 'xl' as const,
         shadow: 'none' as const,
         className: 'rounded-2xl bg-white p-2.5',
+      },
+    },
+    {
+      title: t('project.ic'),
+      subtitle: t('work.ic.subtitle'),
+      description: t('work.ic.description'),
+      image: FotoInstagramIMG,
+      link: "/work/iniciacao-cientifica",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'cover' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl',
       },
     },
   ];

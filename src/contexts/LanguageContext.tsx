@@ -93,6 +93,10 @@ const translations: Record<Language, Record<string, string>> = {
     'project.machado': 'Machado de Assis e o Feminino',
     'project.academic': 'Trabalho Acadêmico',
     'work.download': 'Baixar PDF',
+    'work.ic.subtitle': 'Iniciação Científica na USP',
+    'work.ic.description': 'Pesquisa acadêmica desenvolvida durante a graduação em Letras na USP.',
+    'project.ic': 'Iniciação Científica',
+    'project.research': 'Pesquisa Acadêmica',
     
     // Social
     'social.bio.instagram': 'compartilhando momentos e inspirações!',
@@ -178,6 +182,10 @@ const translations: Record<Language, Record<string, string>> = {
     'project.machado': 'Machado de Assis and the Feminine',
     'project.academic': 'Academic Work',
     'work.download': 'Download PDF',
+    'work.ic.subtitle': 'Undergraduate Research at USP',
+    'work.ic.description': 'Academic research developed during the Literature degree at USP.',
+    'project.ic': 'Undergraduate Research',
+    'project.research': 'Academic Research',
     
     // Social
     'social.bio.instagram': 'sharing moments and inspirations!',
