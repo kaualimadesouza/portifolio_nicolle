@@ -24,11 +24,11 @@ function Home() {
         <div className="max-w-[1400px] mx-auto">
 
           {/* Grid principal - 2 colunas */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
 
-            {/* Left Column - Hero Card (altura completa) */}
-            <div className="rounded-3xl flex flex-col min-h-auto lg:min-h-[720px]">
-              <Card className="p-6 sm:p-8 md:p-10 h-full">
+            {/* Left Column - Hero Card */}
+            <div className="rounded-3xl flex flex-col">
+              <Card className="p-6 sm:p-8 md:p-10">
                 <div className="flex flex-col h-full">
                   {/* Profile Header */}
                   <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
