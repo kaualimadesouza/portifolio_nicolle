@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import {
   Navigation,
   Card,
@@ -14,10 +15,14 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 function Home() {
   const { t } = useLanguage();
+  const [focusedProject, setFocusedProject] = useState<number | null>(null);
   
   return (
-    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
-      <Navigation />
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 relative">
+      {/* Navigation */}
+      <div className={`transition-all duration-300 ${focusedProject !== null ? 'opacity-30 blur-sm' : ''}`}>
+        <Navigation />
+      </div>
 
       {/* Main Content */}
       <div className="pt-6 pb-28 md:pt-28 md:pb-24 lg:pt-28 lg:pb-32 px-4 md:px-8 lg:px-12">
@@ -27,7 +32,7 @@ function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
             {/* Left Column - Hero Card + Contact CTA */}
-            <div className="flex flex-col gap-4">
+            <div className={`flex flex-col gap-4 transition-all duration-300 ${focusedProject !== null ? 'opacity-30 blur-sm' : ''}`}>
               <Card className="p-6 sm:p-8 md:p-10 flex-1">
                 <div className="flex flex-col h-full">
                   {/* Profile Header */}
@@ -52,16 +57,16 @@ function Home() {
                   {/* Bio */}
                   <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
                     <p>
-                      Sou <span className="text-black dark:text-white font-medium">graduanda em Letras pela USP</span> e trabalho na interseção entre{' '}
-                      <span className="text-pink-500">literatura</span>,
-                      <span className="text-purple-500"> ilustração</span> e 
-                      <span className="text-violet-500"> design editorial</span>.
+                      {t('home.bio1')} <span className="text-black dark:text-white font-medium">{t('home.bio1.highlight')}</span> {t('home.bio1.end')}{' '}
+                      <span className="text-pink-500">{t('home.literature')}</span>,
+                      <span className="text-purple-500"> {t('home.illustration')}</span> &amp; 
+                      <span className="text-violet-500"> {t('home.editorial')}</span>.
                     </p>
                     <p>
-                      Acredito na escrita como um campo expandido que envolve imagem, composição e a materialidade do livro. 
+                      {t('home.bio2')}
                     </p>
                     <p className="hidden sm:block">
-                      Meu processo criativo sempre esteve ligado à produção de imagens e ao pensamento visual.
+                      {t('home.bio3')}
                     </p>
                   </div>
 
@@ -113,92 +118,86 @@ function Home() {
             {/* Right Column - Grid de Cards Menores */}
             <div className="flex flex-col gap-4">
               {/* Location e Availability */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 w-full transition-all duration-300 ${focusedProject !== null ? 'opacity-30 blur-sm' : ''}`}>
                 <LocationCard />
                 <AvailabilityCard />
               </div>
 
               {/* Projetos em destaque */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full relative z-20">
                 {/* Featured Project 1 - Aos Olhos do Coração */}
-                <Link to="/work/aos-olhos-do-coracao" className="group block">
-                  <Card className="h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
-                    <div className="relative h-full flex flex-col">
-                      <div className="absolute inset-0 bg-linear-to-br from-rose-500 to-pink-600 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-left rounded-4xl"></div>
+                <div className="flex flex-col">
+                  <Card className={`p-0 overflow-hidden aspect-square transition-all duration-300 ${focusedProject !== null && focusedProject !== 0 ? 'opacity-30 blur-sm' : ''}`}>
+                    <div className="relative h-full flex items-center justify-center ">
+                      {/* Imagem de fundo */}
+                      <img 
+                        src={AosOlhosImg} 
+                        alt={t('project.aos_olhos')} 
+                        className="max-w-full max-h-full object-contain rounded-lg"
+                        loading="lazy"
+                      />
                       
-                      <div className="relative z-10 p-4 sm:p-5 flex flex-col h-full">
-                        <div className="flex items-start justify-between mb-2">
-                          <span className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500 group-hover:text-white/70 transition-colors duration-500">
-                            {t('project.book')}
-                          </span>
-                          <svg className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      {/* Botão */}
+                      <div className="absolute bottom-3 left-3 z-10">
+                        <Link 
+                          to="/work/aos-olhos-do-coracao"
+                          className="inline-flex items-center justify-center rounded-full bg-white/90 dark:bg-zinc-900/90 hover:bg-pink-500 transition-colors w-9 h-9 sm:w-10 sm:h-10 shrink-0 group/btn"
+                          onMouseEnter={() => setFocusedProject(0)}
+                          onMouseLeave={() => setFocusedProject(null)}
+                        >
+                          <svg className="w-4 h-4 text-gray-600 dark:text-gray-300 group-hover/btn:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
                           </svg>
-                        </div>
-                        
-                        <div className="flex-1 flex items-center justify-center py-2">
-                          <img 
-                            src={AosOlhosImg} 
-                            alt={t('project.aos_olhos')} 
-                            className="max-h-20 sm:max-h-24 object-contain rounded-lg shadow-lg bg-white p-1"
-                            loading="lazy"
-                          />
-                        </div>
-                        
-                        <div className="mt-auto">
-                          <h3 className="text-sm sm:text-base font-bold text-black dark:text-white group-hover:text-white transition-colors duration-500 mb-0.5">
-                            {t('project.aos_olhos')}
-                          </h3>
-                          <p className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors duration-500">
-                            {t('project.poetry')}
-                          </p>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </Card>
-                </Link>
+                  {/* Título que aparece no hover - fora do card */}
+                  <div className={`mt-2 transition-all duration-300 overflow-hidden ${focusedProject === 0 ? 'opacity-100 max-h-8' : 'opacity-0 max-h-0'}`}>
+                    <h3 className="text-black dark:text-white font-bold text-sm sm:text-base">
+                      📖 {t('project.aos_olhos')}
+                    </h3>
+                  </div>
+                </div>
 
                 {/* Featured Project 2 - Contos */}
-                <Link to="/work/contos-em-preto-e-branco" className="group block">
-                  <Card className="h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
-                    <div className="relative h-full flex flex-col">
-                      <div className="absolute inset-0 bg-linear-to-br from-zinc-700 to-zinc-900 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-bottom-right rounded-4xl"></div>
+                <div className="flex flex-col">
+                  <Card className={`p-0 overflow-hidden aspect-square transition-all duration-300 ${focusedProject !== null && focusedProject !== 1 ? 'opacity-30 blur-sm' : ''}`}>
+                    <div className="relative h-full flex items-center justify-center ">
+                      {/* Imagem de fundo */}
+                      <img 
+                        src={ContosImg} 
+                        alt={t('project.contos')} 
+                        className="max-w-full max-h-full object-contain rounded-lg"
+                        loading="lazy"
+                      />
                       
-                      <div className="relative z-10 p-4 sm:p-5 flex flex-col h-full">
-                        <div className="flex items-start justify-between mb-2">
-                          <span className="text-xs font-medium uppercase tracking-wider text-gray-400 dark:text-gray-500 group-hover:text-white/70 transition-colors duration-500">
-                            {t('project.tales')}
-                          </span>
-                          <svg className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      {/* Botão */}
+                      <div className="absolute bottom-3 left-3 z-10">
+                        <Link 
+                          to="/work/contos-em-preto-e-branco"
+                          className="inline-flex items-center justify-center rounded-full bg-white/90 dark:bg-zinc-900/90 hover:bg-zinc-800 dark:hover:bg-white transition-colors w-9 h-9 sm:w-10 sm:h-10 shrink-0 group/btn"
+                          onMouseEnter={() => setFocusedProject(1)}
+                          onMouseLeave={() => setFocusedProject(null)}
+                        >
+                          <svg className="w-4 h-4 text-gray-600 dark:text-gray-300 group-hover/btn:text-white dark:group-hover/btn:text-black transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
                           </svg>
-                        </div>
-                        
-                        <div className="flex-1 flex items-center justify-center py-2">
-                          <img 
-                            src={ContosImg} 
-                            alt={t('project.contos')} 
-                            className="max-h-20 sm:max-h-24 object-contain rounded bg-white p-1"
-                            loading="lazy"
-                          />
-                        </div>
-                        
-                        <div className="mt-auto">
-                          <h3 className="text-sm sm:text-base font-bold text-black dark:text-white group-hover:text-white transition-colors duration-500 mb-0.5">
-                            {t('project.contos')}
-                          </h3>
-                          <p className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-white/80 transition-colors duration-500">
-                            {t('project.tales')}
-                          </p>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </Card>
-                </Link>
+                  {/* Título que aparece no hover - fora do card */}
+                  <div className={`mt-2 transition-all duration-300 overflow-hidden ${focusedProject === 1 ? 'opacity-100 max-h-8' : 'opacity-0 max-h-0'}`}>
+                    <h3 className="text-black dark:text-white font-bold text-sm sm:text-base">
+                      📚 {t('project.contos')}
+                    </h3>
+                  </div>
+                </div>
               </div>
 
               {/* Redes sociais */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 w-full transition-all duration-300 ${focusedProject !== null ? 'opacity-30 blur-sm' : ''}`}>
                 <div className="h-64 sm:h-72 md:h-80">
                   <InstagramCard />
                 </div>
@@ -207,7 +206,6 @@ function Home() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

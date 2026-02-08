@@ -3,6 +3,8 @@ import WorkCard from '../components/ui/WorkCard';
 import { useState } from 'react';
 import AosOlhosDoCoracaoIMG from '../assets/aos_olhos_do_coração.jpg';
 import ContosEmPretoEBrancoIMG from '../assets/contos_em_preto_e_branco.png';
+import FuturoDoPreterito from '../assets/14_futuro_preterito.png';
+import MachadoIMG from '../assets/machado.jpeg';
 import { useLanguage } from '../contexts/LanguageContext';
 
 function Work() {
@@ -30,6 +32,34 @@ function Work() {
       description: t('work.contos.description'),
       image: ContosEmPretoEBrancoIMG,
       link: "/work/contos-em-preto-e-branco",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'contain' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl bg-white p-2.5',
+      },
+    },
+    {
+      title: t('project.futuro'),
+      subtitle: t('work.futuro.subtitle'),
+      description: t('work.futuro.description'),
+      image: FuturoDoPreterito,
+      link: "/work/futuro-do-preterito",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'contain' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl bg-white p-2.5',
+      },
+    },
+    {
+      title: t('project.machado'),
+      subtitle: t('work.machado.subtitle'),
+      description: t('work.machado.description'),
+      image: MachadoIMG,
+      link: "/work/machado-de-assis-e-o-feminino",
       imageConfig: {
         size: 'full' as const,
         fit: 'contain' as const,

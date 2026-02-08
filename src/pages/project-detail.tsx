@@ -1,5 +1,6 @@
 import { Navigation } from '../components/ui';
 import { useParams, Link } from 'react-router-dom';
+import MachadoPDF from '../assets/MACHADO DE ASSIS E O FEMININO_.pdf';
 
 interface ProjectData {
   title: string;
@@ -12,6 +13,7 @@ interface ProjectData {
   heroImage?: string;
   images: { src: string; alt: string }[];
   caseStudyLink?: string;
+  isDownload?: boolean;
 }
 
 const projects: Record<string, ProjectData> = {
@@ -47,6 +49,37 @@ const projects: Record<string, ProjectData> = {
       { src: "https://static.wixstatic.com/media/3c44b2_e545ac4850474908883ca460cda1f8d9~mv2.jpeg/v1/fill/w_900,h_900,al_c,q_85/3c44b2_e545ac4850474908883ca460cda1f8d9~mv2.jpeg", alt: "Capa do livro Contos em Preto e Branco" }
     ],
     caseStudyLink: "https://www.editoraminimalismos.com/product-page/contos-em-preto-e-branco-de-nicolle-marinho-martins"
+  },
+  "futuro-do-preterito": {
+    title: "Futuro do Pretérito",
+    subtitle: "Capa de Revista Acadêmica",
+    role: ["Designer", "Ilustradora"],
+    tools: ["Design Editorial", "Ilustração"],
+    timeline: "2024",
+    description: "Criação da capa da edição 14 da revista Futuro do Pretérito, publicação acadêmica da Faculdade de Educação da USP.",
+    context: [
+      "A revista Futuro do Pretérito é uma publicação acadêmica da Faculdade de Educação da Universidade de São Paulo (FE-USP), dedicada a reflexões sobre educação, memória e cultura.",
+      "A edição 14 foi minha primeira participação no projeto, onde tive a oportunidade de criar a capa, unindo minha paixão por design editorial e ilustração.",
+      "O processo criativo envolveu uma imersão nos temas abordados pela revista, buscando traduzir visualmente as discussões sobre passado e futuro que permeiam a publicação."
+    ],
+    images: [],
+    caseStudyLink: "https://www4.fe.usp.br/wp-content/uploads/futuropreterito-2024-03.pdf"
+  },
+  "machado-de-assis-e-o-feminino": {
+    title: "Machado de Assis e o Feminino",
+    subtitle: "Trabalho Acadêmico",
+    role: ["Pesquisadora", "Ilustradora"],
+    tools: ["Pesquisa Literária", "Ilustração", "Design Editorial"],
+    timeline: "2024",
+    description: "Análise visual e literária das representações do feminino na obra de Machado de Assis.",
+    context: [
+      "Este trabalho acadêmico explora as representações femininas na obra de Machado de Assis, um dos maiores escritores da literatura brasileira.",
+      "A pesquisa analisa como Machado construiu personagens femininas complexas e multifacetadas, que desafiavam as convenções sociais de sua época.",
+      "O projeto une análise literária com criação visual, traduzindo elementos do texto machadiano para a linguagem da ilustração e do design editorial."
+    ],
+    images: [],
+    caseStudyLink: "/assets/MACHADO DE ASSIS E O FEMININO_.pdf",
+    isDownload: true
   },
 };
 
@@ -144,17 +177,30 @@ function ProjectDetail() {
           {/* Case Study Button */}
           {project.caseStudyLink && (
             <div className="mb-8 sm:mb-12">
-              <a
-                href={project.caseStudyLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:opacity-80 transition-opacity"
-              >
-                Ver trabalho
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
+              {project.isDownload ? (
+                <a
+                  href={MachadoPDF}
+                  download="MACHADO DE ASSIS E O FEMININO.pdf"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:opacity-80 transition-opacity"
+                >
+                  Baixar PDF
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                </a>
+              ) : (
+                <a
+                  href={project.caseStudyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-medium hover:opacity-80 transition-opacity"
+                >
+                  Ver trabalho
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              )}
             </div>
           )}
 

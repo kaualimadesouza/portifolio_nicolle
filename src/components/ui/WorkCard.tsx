@@ -22,6 +22,7 @@ interface WorkCardProps {
   image?: string;
   icon?: string;
   link?: string;
+  external?: boolean;
   onFocus?: (focus: boolean) => void;
   isFocused?: boolean;
   /** Configurações de customização da imagem */
@@ -65,6 +66,7 @@ function WorkCard({
   image,
   icon,
   link,
+  external,
   onFocus,
   isFocused,
   imageConfig = {},
@@ -97,20 +99,39 @@ function WorkCard({
           <h2 className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-400 mb-2 sm:mb-4 font-normal line-clamp-2">{subtitle}</h2>
         </div>
 
-        <Link
-          to={link || '/work/dotos'}
-          className="inline-flex items-center justify-center rounded-full border-2 border-gray-300 dark:border-white hover:border-none hover:bg-white dark:hover:bg-white transition-colors w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 mt-1 sm:mt-2 shadow-md group/btn shrink-0"
-          aria-label={`Ver projeto ${title}`}
-          onMouseEnter={() => onFocus && onFocus(true)}
-          onMouseLeave={() => onFocus && onFocus(false)}
-        >
-          <img
-            src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/62ca186ae691b25b1768cbfe_arrow-angle.svg"
-            alt="Ir para o projeto"
-            className="w-5 h-5 sm:w-6 sm:h-6 opacity-100 transition-all duration-200 dark:invert dark:group-hover/btn:invert-0 group-hover/btn:scale-110"
-            loading="lazy"
-          />
-        </Link>
+        {external ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full border-2 border-gray-300 dark:border-white hover:border-none hover:bg-white dark:hover:bg-white transition-colors w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 mt-1 sm:mt-2 shadow-md group/btn shrink-0"
+            aria-label={`Ver projeto ${title}`}
+            onMouseEnter={() => onFocus && onFocus(true)}
+            onMouseLeave={() => onFocus && onFocus(false)}
+          >
+            <img
+              src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/62ca186ae691b25b1768cbfe_arrow-angle.svg"
+              alt="Ir para o projeto"
+              className="w-5 h-5 sm:w-6 sm:h-6 opacity-100 transition-all duration-200 dark:invert dark:group-hover/btn:invert-0 group-hover/btn:scale-110"
+              loading="lazy"
+            />
+          </a>
+        ) : (
+          <Link
+            to={link || '/work/dotos'}
+            className="inline-flex items-center justify-center rounded-full border-2 border-gray-300 dark:border-white hover:border-none hover:bg-white dark:hover:bg-white transition-colors w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 mt-1 sm:mt-2 shadow-md group/btn shrink-0"
+            aria-label={`Ver projeto ${title}`}
+            onMouseEnter={() => onFocus && onFocus(true)}
+            onMouseLeave={() => onFocus && onFocus(false)}
+          >
+            <img
+              src="https://cdn.prod.website-files.com/62c89bdb7c26b515f632de67/62ca186ae691b25b1768cbfe_arrow-angle.svg"
+              alt="Ir para o projeto"
+              className="w-5 h-5 sm:w-6 sm:h-6 opacity-100 transition-all duration-200 dark:invert dark:group-hover/btn:invert-0 group-hover/btn:scale-110"
+              loading="lazy"
+            />
+          </Link>
+        )}
       </div>
 
       <div className='mx-4 sm:mx-6 md:mx-8 mt-2 h-px bg-gray-300 dark:bg-zinc-700'></div>
