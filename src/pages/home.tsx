@@ -121,8 +121,8 @@ function Home() {
               {/* Projetos em destaque */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                 {/* Featured Project 1 - Aos Olhos do Coração */}
-                <Link to="/work/aos-olhos-do-coracao" className="block">
-                  <Card className="group h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
+                <Link to="/work/aos-olhos-do-coracao" className="group block">
+                  <Card className="h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
                     <div className="relative h-full flex flex-col">
                       <div className="absolute inset-0 bg-linear-to-br from-rose-500 to-pink-600 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-left rounded-4xl"></div>
                       
@@ -159,8 +159,8 @@ function Home() {
                 </Link>
 
                 {/* Featured Project 2 - Contos */}
-                <Link to="/work/contos-em-preto-e-branco" className="block">
-                  <Card className="group h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
+                <Link to="/work/contos-em-preto-e-branco" className="group block">
+                  <Card className="h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
                     <div className="relative h-full flex flex-col">
                       <div className="absolute inset-0 bg-linear-to-br from-zinc-700 to-zinc-900 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-bottom-right rounded-4xl"></div>
                       
