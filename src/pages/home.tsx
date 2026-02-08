@@ -24,11 +24,11 @@ function Home() {
         <div className="max-w-[1400px] mx-auto">
 
           {/* Grid principal - 2 colunas */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
             {/* Left Column - Hero Card + Contact CTA */}
             <div className="flex flex-col gap-4">
-              <Card className="p-6 sm:p-8 md:p-10">
+              <Card className="p-6 sm:p-8 md:p-10 flex-1">
                 <div className="flex flex-col h-full">
                   {/* Profile Header */}
                   <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
@@ -50,15 +50,18 @@ function Home() {
                   <div className="h-px bg-black/10 dark:bg-white/10 mb-6 sm:mb-8"></div>
 
                   {/* Bio */}
-                  <div className="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
+                  <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
                     <p>
-                      {t('home.bio1')} <span className="text-black dark:text-white font-medium">{t('home.bio1.highlight')}</span> {t('home.bio1.end')}{' '}
-                      <span className="text-pink-500">{t('home.literature')}</span>,
-                      <span className="text-purple-500"> {t('home.illustration')}</span> e 
-                      <span className="text-violet-500"> {t('home.editorial')}</span>.
+                      Sou <span className="text-black dark:text-white font-medium">graduanda em Letras pela USP</span> e trabalho na interseção entre{' '}
+                      <span className="text-pink-500">literatura</span>,
+                      <span className="text-purple-500"> ilustração</span> e 
+                      <span className="text-violet-500"> design editorial</span>.
+                    </p>
+                    <p>
+                      Acredito na escrita como um campo expandido que envolve imagem, composição e a materialidade do livro. 
                     </p>
                     <p className="hidden sm:block">
-                      {t('home.bio2')}
+                      Meu processo criativo sempre esteve ligado à produção de imagens e ao pensamento visual.
                     </p>
                   </div>
 
@@ -118,10 +121,10 @@ function Home() {
               {/* Projetos em destaque */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                 {/* Featured Project 1 - Aos Olhos do Coração */}
-                <Link to="/work/aos-olhos-do-coracao" className="group">
-                  <Card className="h-full p-0 overflow-hidden min-h-48 sm:min-h-56">
+                <Link to="/work/aos-olhos-do-coracao" className="block">
+                  <Card className="group h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
                     <div className="relative h-full flex flex-col">
-                      <div className="absolute inset-0 bg-linear-to-br from-rose-500 to-pink-600 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-left"></div>
+                      <div className="absolute inset-0 bg-linear-to-br from-rose-500 to-pink-600 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-left rounded-4xl"></div>
                       
                       <div className="relative z-10 p-4 sm:p-5 flex flex-col h-full">
                         <div className="flex items-start justify-between mb-2">
@@ -156,10 +159,10 @@ function Home() {
                 </Link>
 
                 {/* Featured Project 2 - Contos */}
-                <Link to="/work/contos-em-preto-e-branco" className="group">
-                  <Card className="h-full p-0 overflow-hidden min-h-48 sm:min-h-56">
+                <Link to="/work/contos-em-preto-e-branco" className="block">
+                  <Card className="group h-full p-0 overflow-hidden min-h-48 sm:min-h-56 cursor-pointer">
                     <div className="relative h-full flex flex-col">
-                      <div className="absolute inset-0 bg-linear-to-br from-zinc-700 to-zinc-900 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-bottom-right"></div>
+                      <div className="absolute inset-0 bg-linear-to-br from-zinc-700 to-zinc-900 transform scale-0 group-hover:scale-100 transition-transform duration-500 origin-bottom-right rounded-4xl"></div>
                       
                       <div className="relative z-10 p-4 sm:p-5 flex flex-col h-full">
                         <div className="flex items-start justify-between mb-2">
