@@ -47,7 +47,7 @@ function WorkCard({
 
   return (
     <div
-      className={`relative rounded-xl sm:rounded-2xl shadow-lg group flex flex-col w-full aspect-4/3 sm:aspect-square bg-[#F7F7F9] dark:bg-zinc-900 transition-all duration-300 ${isFocused === false ? 'opacity-10 pointer-events-none' : 'opacity-100'}`}
+      className={`relative rounded-xl sm:rounded-2xl shadow-lg group flex flex-col w-full aspect-square bg-[#F7F7F9] dark:bg-zinc-900 transition-all duration-300 ${isFocused === false ? 'opacity-10 pointer-events-none' : 'opacity-100'}`}
     >
       {/* Top: Title + Button */}
       <div className="flex justify-between px-4 pt-4 sm:px-6 sm:pt-6 md:px-8 md:pt-8">
