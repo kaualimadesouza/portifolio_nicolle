@@ -8,11 +8,10 @@ import Geo2PDF from '../assets/diagramacao-apostilas/apostila-geografia-2.pdf';
 import AutobiografiePDF from '../assets/italiano/autobiografie-linguistiche.pdf';
 import DiagramacaoIMG from '../assets/diagramacao-apostilas/diagramacao-apostila-preview.jpeg';
 import ItalianoCapaIMG from '../assets/italiano/italiano-capa-ilustracao.jpeg';
-import JaquetaBrancaIMG from '../assets/jaqueta-italiano-usp/italiano-jaqueta-branca.png';
 import JaquetaAzulIMG from '../assets/jaqueta-italiano-usp/italiano-jaqueta-azul.png';
-import VarsityIMG from '../assets/jaqueta-italiano-usp/italiano-varsity-jacket.png';
-import VarsityColoridaIMG from '../assets/jaqueta-italiano-usp/italiano-varsity-jacket-colorida.png';
-import CamisetaIMG from '../assets/jaqueta-italiano-usp/italiano-camiseta.png';
+import VarsityIMG from '../assets/jaqueta-italiano-usp/italiano-varsity-jacket.jpeg';
+import VarsityColoridaIMG from '../assets/jaqueta-italiano-usp/italiano-varsity-jacket-colorida.jpeg';
+import CamisetaIMG from '../assets/jaqueta-italiano-usp/italiano-camiseta.jpeg';
 import MachadoCardIMG from '../assets/machado-de-assis/machado-de-assis-card.jpeg';
 import ICCardIMG from '../assets/iniciacao-cientifica/iniciacao-cientifica-card.jpeg';
 import FuturoCapaIMG from '../assets/futuro-do-preterito/futuro-do-preterito-capa.png';
@@ -186,7 +185,6 @@ const projects: Record<string, ProjectData> = {
     ],
     images: [
       { src: CamisetaIMG, alt: "Camiseta Italiano USP - La dolce vita" },
-      { src: JaquetaBrancaIMG, alt: "Jaqueta branca Italiano USP - La dolce vita" },
       { src: JaquetaAzulIMG, alt: "Jaqueta azul Italiano USP - La dolce vita" },
       { src: VarsityIMG, alt: "Varsity jacket Italia - Vivere all'italiana" },
       { src: VarsityColoridaIMG, alt: "Varsity jacket Italia - design colorido" },
