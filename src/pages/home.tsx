@@ -57,10 +57,13 @@ function Home() {
                   {/* Bio */}
                   <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
                     <p>
-                      {t('home.bio1')} <span className="text-black dark:text-white font-medium">{t('home.bio1.highlight')}</span> {t('home.bio1.end')}{' '}
-                      <span className="text-pink-500">{t('home.literature')}</span>,
-                      <span className="text-purple-500"> {t('home.illustration')}</span> &amp; 
-                      <span className="text-violet-500"> {t('home.editorial')}</span>.
+                      {t('home.bio1')}{' '}
+                      <span className="text-black dark:text-white font-medium">{t('home.bio1.highlight')}</span>{' '}
+                      {t('home.bio1.end')}{' '}
+                      <span className="text-pink-500 font-medium">{t('home.literature')}</span>,{' '}
+                      <span className="text-purple-500 font-medium">{t('home.illustration')}</span>{' '}
+                      <span className="text-gray-400 dark:text-gray-500">&</span>{' '}
+                      <span className="text-violet-500 font-medium">{t('home.editorial')}</span>.
                     </p>
                     <p>
                       {t('home.bio2')}
@@ -127,18 +130,11 @@ function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full relative z-20">
                 {/* Featured Project 1 - Aos Olhos do Coração */}
                 <div className="flex flex-col">
-                  <Card className={`p-0 overflow-hidden aspect-square transition-all duration-300 ${focusedProject !== null && focusedProject !== 0 ? 'opacity-30 blur-sm' : ''}`}>
-                    <div className="relative h-full flex items-center justify-center ">
-                      {/* Imagem de fundo */}
-                      <img 
-                        src={AosOlhosImg} 
-                        alt={t('project.aos_olhos')} 
-                        className="max-w-full max-h-full object-contain rounded-lg"
-                        loading="lazy"
-                      />
-                      
+                  <Card className={`!p-0 overflow-hidden aspect-square transition-all duration-300 ${focusedProject !== null && focusedProject !== 0 ? 'opacity-30 blur-sm' : ''}`}>
+                    <div className="relative h-full" style={{ backgroundImage: `url(${AosOlhosImg})`, backgroundSize: 'cover', backgroundPosition: 'center 15%' }}>
+
                       {/* Botão */}
-                      <div className="absolute bottom-3 left-3 z-10">
+                      <div className="absolute bottom-6 left-6 z-10">
                         <Link 
                           to="/work/aos-olhos-do-coracao"
                           className="inline-flex items-center justify-center rounded-full bg-white/90 dark:bg-zinc-900/90 hover:bg-pink-500 transition-colors w-9 h-9 sm:w-10 sm:h-10 shrink-0 group/btn"
@@ -162,18 +158,10 @@ function Home() {
 
                 {/* Featured Project 2 - Contos */}
                 <div className="flex flex-col">
-                  <Card className={`p-0 overflow-hidden aspect-square transition-all duration-300 ${focusedProject !== null && focusedProject !== 1 ? 'opacity-30 blur-sm' : ''}`}>
-                    <div className="relative h-full flex items-center justify-center ">
-                      {/* Imagem de fundo */}
-                      <img 
-                        src={ContosImg} 
-                        alt={t('project.contos')} 
-                        className="max-w-full max-h-full object-contain rounded-lg"
-                        loading="lazy"
-                      />
-                      
+                  <Card className={`!p-0 overflow-hidden aspect-square transition-all duration-300 ${focusedProject !== null && focusedProject !== 1 ? 'opacity-30 blur-sm' : ''}`}>
+                    <div className="relative h-full" style={{ backgroundImage: `url(${ContosImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                       {/* Botão */}
-                      <div className="absolute bottom-3 left-3 z-10">
+                      <div className="absolute bottom-6 left-6 z-10">
                         <Link 
                           to="/work/contos-em-preto-e-branco"
                           className="inline-flex items-center justify-center rounded-full bg-white/90 dark:bg-zinc-900/90 hover:bg-zinc-800 dark:hover:bg-white transition-colors w-9 h-9 sm:w-10 sm:h-10 shrink-0 group/btn"
