@@ -13,6 +13,8 @@ interface ImageConfig {
   shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
   /** Classes customizadas adicionais */
   className?: string;
+  /** Cor de fundo do container da imagem */
+  bgColor?: string;
 }
 
 interface WorkCardProps {
@@ -29,36 +31,6 @@ interface WorkCardProps {
   imageConfig?: ImageConfig;
 }
 
-const sizeClasses = {
-  sm: 'max-h-32 sm:max-h-40 md:max-h-48',
-  md: 'max-h-40 sm:max-h-52 md:max-h-60',
-  lg: 'max-h-52 sm:max-h-64 md:max-h-72',
-  xl: 'max-h-64 sm:max-h-80 md:max-h-96',
-  full: 'max-h-full w-full',
-};
-
-const fitClasses = {
-  contain: 'object-contain',
-  cover: 'object-cover',
-  fill: 'object-fill',
-  none: 'object-none',
-};
-
-const positionClasses = {
-  center: 'object-center',
-  top: 'object-top',
-  bottom: 'object-bottom',
-  left: 'object-left',
-  right: 'object-right',
-};
-
-const shadowClasses = {
-  none: 'shadow-none',
-  sm: 'shadow-sm',
-  md: 'shadow-md',
-  lg: 'shadow-lg',
-  xl: 'shadow-xl',
-};
 
 function WorkCard({
   title,
@@ -71,28 +43,13 @@ function WorkCard({
   isFocused,
   imageConfig = {},
 }: WorkCardProps) {
-  const {
-    size = 'md',
-    fit = 'contain',
-    position = 'center',
-    shadow = 'md',
-    className: customClassName = '',
-  } = imageConfig;
-
-  const imageClasses = `
-    ${sizeClasses[size]}
-    ${fitClasses[fit]}
-    ${positionClasses[position]}
-    rounded-2xl
-    ${shadowClasses[shadow]}
-    ${customClassName}
-  `.trim();
+  const { fit = 'cover', bgColor, className: customClassName = '' } = imageConfig;
 
   return (
     <div
-      className={`relative rounded-xl sm:rounded-2xl shadow-lg overflow-hidden group flex flex-col w-full aspect-4/3 sm:aspect-square bg-[#F7F7F9] dark:bg-zinc-900 transition-all duration-300 ${isFocused === false ? 'opacity-10 pointer-events-none' : 'opacity-100'}`}
+      className={`relative rounded-xl sm:rounded-2xl shadow-lg group flex flex-col w-full aspect-4/3 sm:aspect-square bg-[#F7F7F9] dark:bg-zinc-900 transition-all duration-300 ${isFocused === false ? 'opacity-10 pointer-events-none' : 'opacity-100'}`}
     >
-      {/* Left: Main Info */}
+      {/* Top: Title + Button */}
       <div className="flex justify-between px-4 pt-4 sm:px-6 sm:pt-6 md:px-8 md:pt-8">
         <div className="flex-1 min-w-0 pr-3">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-black dark:text-white truncate">{title}</h1>
@@ -118,7 +75,7 @@ function WorkCard({
           </a>
         ) : (
           <Link
-            to={link || '/work/dotos'}
+            to={link || '/work'}
             className="inline-flex items-center justify-center rounded-full border-2 border-gray-300 dark:border-white hover:border-none hover:bg-white dark:hover:bg-white transition-colors w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 mt-1 sm:mt-2 shadow-md group/btn shrink-0"
             aria-label={`Ver projeto ${title}`}
             onMouseEnter={() => onFocus && onFocus(true)}
@@ -136,13 +93,27 @@ function WorkCard({
 
       <div className='mx-4 sm:mx-6 md:mx-8 mt-2 h-px bg-gray-300 dark:bg-zinc-700'></div>
 
-      {/* Right: Mockup/Preview */}
-      <div className="flex-1 flex items-center justify-center py-4 sm:py-6 relative min-h-40 sm:min-h-52 md:min-h-65">
-        <div className="w-full h-full flex items-center justify-center px-4 sm:px-6 md:px-8">
+      {/* Bottom: Image area - fills remaining space, clipped at card edges */}
+      <div className="flex-1 overflow-hidden relative">
+        <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-5 md:p-6">
           {image ? (
-            <div className="overflow-hidden rounded-2xl h-full flex items-center justify-center">
-              <img src={image} alt={title + ' preview'} className={imageClasses} loading="lazy" />
-            </div>
+            fit === 'cover' ? (
+              <div className="w-full h-full rounded-2xl overflow-hidden" style={bgColor ? { backgroundColor: bgColor } : undefined}>
+                <img
+                  src={image}
+                  alt={title + ' preview'}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <img
+                src={image}
+                alt={title + ' preview'}
+                className={`max-w-full max-h-full rounded-2xl object-contain ${customClassName}`}
+                loading="lazy"
+              />
+            )
           ) : icon ? (
             <img src={icon} alt={title + ' icon'} className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-contain" loading="lazy" />
           ) : null}

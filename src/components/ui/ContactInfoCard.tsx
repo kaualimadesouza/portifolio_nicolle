@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CV from '../../assets/CV_Nicolle.pdf';
+import CV from '../../assets/common/cv-nicolle.pdf';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 function ContactInfoCard() {

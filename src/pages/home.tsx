@@ -8,9 +8,9 @@ import {
   LocationCard,
   AvailabilityCard,
 } from '../components/ui';
-import ProfilePhoto from '../assets/foto_instagram.jpg';
-import AosOlhosImg from '../assets/aos_olhos_do_coração.jpg';
-import ContosImg from '../assets/contos_em_preto_e_branco.png';
+import ProfilePhoto from '../assets/common/profile-photo.jpg';
+import AosOlhosImg from '../assets/aos-olhos-do-coracao/aos-olhos-do-coracao-capa.jpg';
+import ContosImg from '../assets/contos-em-preto-e-branco/contos-em-preto-e-branco-capa.png';
 import { useLanguage } from '../contexts/LanguageContext';
 
 function Home() {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CV_Nicolle from '../../assets/CV_Nicolle.pdf';
+import CV_Nicolle from '../../assets/common/cv-nicolle.pdf';
 import { Card } from './Card';
 import { useLanguage } from '../../contexts/LanguageContext';
 

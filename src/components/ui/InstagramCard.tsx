@@ -1,5 +1,5 @@
 import { Card } from './Card';
-import InstagramPhoto from '../../assets/foto_instagram.jpg';
+import InstagramPhoto from '../../assets/common/profile-photo.jpg';
 
 function InstagramCard() {
   return (

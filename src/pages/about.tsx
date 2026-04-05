@@ -5,8 +5,10 @@ import {
 } from '../components/ui';
 import InstagramCard from '../components/ui/InstagramCard';
 import LinkedinCard from '../components/ui/LinkedinCard';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function About() {
+  const { t } = useLanguage();
   const leftColRef = useRef<HTMLDivElement>(null);
   const [rightColMaxHeight, setRightColMaxHeight] = useState<number | null>(null);
 
@@ -72,41 +74,63 @@ function About() {
                 style={{ maxHeight: rightColMaxHeight ? `${timelineMaxHeight}px` : '400px' }}
               >
                 <h3 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4 flex-shrink-0">
-                  Experiência
+                  {t('about.experience')}
                 </h3>
                 <div className="relative flex-1 overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full dark:[&::-webkit-scrollbar-thumb]:bg-zinc-700 hover:[&::-webkit-scrollbar-thumb]:bg-gray-400 dark:hover:[&::-webkit-scrollbar-thumb]:bg-zinc-600">
                   {/* Timeline line */}
                   <div className="absolute left-[5px] top-2 bottom-2 w-[2px] bg-gray-300 dark:bg-zinc-700" />
                   
                   <div className="space-y-4">
-                    {/* PIBID */}
+                    {/* Professora Cursinho EACH */}
                     <div className="relative pl-5">
                       <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-purple-500 border-2 border-white dark:border-zinc-900" />
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-purple-500 font-semibold">dez 2025 - atual</span>
-                        <span className="text-[9px] bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-1.5 py-0.5 rounded">3 meses</span>
+                        <span className="text-[10px] text-purple-500 font-semibold">mar 2026 - atual</span>
+                        <span className="text-[9px] bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-1.5 py-0.5 rounded">2 meses</span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Professora de Redação</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Cursinho Popular EACH-USP</p>
+                    </div>
+
+                    {/* Corretora Lourenço Castanho */}
+                    <div className="relative pl-5">
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-fuchsia-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-fuchsia-500 font-semibold">mar 2026 - atual</span>
+                        <span className="text-[9px] bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-600 dark:text-fuchsia-400 px-1.5 py-0.5 rounded">2 meses</span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Corretora de Redação</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Escola Lourenço Castanho</p>
+                    </div>
+
+                    {/* Monitora Lourenço Castanho */}
+                    <div className="relative pl-5">
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-fuchsia-400 border-2 border-white dark:border-zinc-900" />
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-fuchsia-400 font-semibold">fev 2026 - mar 2026</span>
+                        <span className="text-[9px] bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-600 dark:text-fuchsia-400 px-1.5 py-0.5 rounded">2 meses</span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Monitora de Português - Estágio</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Escola Lourenço Castanho</p>
+                    </div>
+
+                    {/* PIBID */}
+                    <div className="relative pl-5">
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-violet-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-violet-500 font-semibold">dez 2025 - atual</span>
+                        <span className="text-[9px] bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 px-1.5 py-0.5 rounded">5 meses</span>
                       </div>
                       <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Bolsista PIBID - Língua Portuguesa</p>
                       <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Universidade de São Paulo</p>
                     </div>
 
-                    {/* Coordenadora Contar Histórias */}
-                    <div className="relative pl-5">
-                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-fuchsia-500 border-2 border-white dark:border-zinc-900" />
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-fuchsia-500 font-semibold">jan 2025 - dez 2025</span>
-                        <span className="text-[9px] bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-600 dark:text-fuchsia-400 px-1.5 py-0.5 rounded">1 ano</span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Coordenadora de Oficinas - Contar Histórias</p>
-                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Universidade de São Paulo</p>
-                    </div>
-
                     {/* Corretora Argumento */}
                     <div className="relative pl-5">
-                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-violet-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-pink-500 border-2 border-white dark:border-zinc-900" />
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-violet-500 font-semibold">set 2025 - atual</span>
-                        <span className="text-[9px] bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 px-1.5 py-0.5 rounded">6 meses</span>
+                        <span className="text-[10px] text-pink-500 font-semibold">set 2025 - atual</span>
+                        <span className="text-[9px] bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 px-1.5 py-0.5 rounded">8 meses</span>
                       </div>
                       <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Corretora de Redação</p>
                       <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Colégio Argumento</p>
@@ -114,32 +138,43 @@ function About() {
 
                     {/* Monitora Villare */}
                     <div className="relative pl-5">
-                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-pink-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-rose-500 border-2 border-white dark:border-zinc-900" />
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-pink-500 font-semibold">jun 2025 - jan 2026</span>
-                        <span className="text-[9px] bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 px-1.5 py-0.5 rounded">8 meses</span>
+                        <span className="text-[10px] text-rose-500 font-semibold">jun 2025 - fev 2026</span>
+                        <span className="text-[9px] bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 px-1.5 py-0.5 rounded">9 meses</span>
                       </div>
                       <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Monitora de Português - Estágio</p>
                       <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Escola Villare</p>
                     </div>
 
+                    {/* Coordenadora Contar Histórias */}
+                    <div className="relative pl-5">
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-amber-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-amber-500 font-semibold">jan 2025 - dez 2025</span>
+                        <span className="text-[9px] bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 px-1.5 py-0.5 rounded">1 ano</span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Coordenadora de Oficinas - Contar Histórias</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Universidade de São Paulo</p>
+                    </div>
+
                     {/* Salvaguarda */}
                     <div className="relative pl-5">
-                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-rose-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-orange-500 border-2 border-white dark:border-zinc-900" />
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-rose-500 font-semibold">jan 2025 - dez 2025</span>
-                        <span className="text-[9px] bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 px-1.5 py-0.5 rounded">1 ano</span>
+                        <span className="text-[10px] text-orange-500 font-semibold">jan 2025 - dez 2025</span>
+                        <span className="text-[9px] bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">1 ano</span>
                       </div>
-                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Corretora de Redação Voluntária</p>
+                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Corretora de Redação</p>
                       <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Salvaguarda</p>
                     </div>
 
                     {/* Publicação Contos */}
                     <div className="relative pl-5">
-                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-amber-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-yellow-500 border-2 border-white dark:border-zinc-900" />
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-amber-500 font-semibold">jun 2025</span>
-                        <span className="text-[9px] bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 px-1.5 py-0.5 rounded">📖 Livro</span>
+                        <span className="text-[10px] text-yellow-500 font-semibold">jun 2025</span>
+                        <span className="text-[9px] bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 px-1.5 py-0.5 rounded">📖 Livro</span>
                       </div>
                       <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Contos em Preto e Branco</p>
                       <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Editora Minimalismos</p>
@@ -152,8 +187,8 @@ function About() {
                         <span className="text-[10px] text-blue-500 font-semibold">abr 2025 - jun 2025</span>
                         <span className="text-[9px] bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-1.5 py-0.5 rounded">3 meses</span>
                       </div>
-                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Diagramadora Freelancer</p>
-                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Arco Educação</p>
+                      <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Diagramadora de Materiais Ampliados</p>
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Arco Educação (SAS)</p>
                     </div>
 
                     {/* IC PIBIC */}
@@ -169,10 +204,10 @@ function About() {
 
                     {/* Futuro do Pretérito */}
                     <div className="relative pl-5">
-                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-orange-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-teal-500 border-2 border-white dark:border-zinc-900" />
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-orange-500 font-semibold">ago 2023 - dez 2025</span>
-                        <span className="text-[9px] bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">2 anos 5 meses</span>
+                        <span className="text-[10px] text-teal-500 font-semibold">ago 2023 - dez 2025</span>
+                        <span className="text-[9px] bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 px-1.5 py-0.5 rounded">2 anos 5 meses</span>
                       </div>
                       <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Diagramadora Revista Futuro do Pretérito</p>
                       <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Faculdade de Educação USP</p>
@@ -191,10 +226,10 @@ function About() {
 
                     {/* Palestrante */}
                     <div className="relative pl-5">
-                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-yellow-500 border-2 border-white dark:border-zinc-900" />
+                      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-cyan-500 border-2 border-white dark:border-zinc-900" />
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-yellow-500 font-semibold">2022</span>
-                        <span className="text-[9px] bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 px-1.5 py-0.5 rounded">🎤 Palestra</span>
+                        <span className="text-[10px] text-cyan-500 font-semibold">2022</span>
+                        <span className="text-[9px] bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 px-1.5 py-0.5 rounded">🎤 Palestra</span>
                       </div>
                       <p className="text-xs sm:text-sm text-black dark:text-white font-medium">Palestrante - Semana Literária</p>
                       <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Colégio Sapiens</p>

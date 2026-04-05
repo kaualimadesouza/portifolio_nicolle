@@ -1,12 +1,14 @@
 import { Navigation } from '../components/ui';
 import WorkCard from '../components/ui/WorkCard';
 import { useState } from 'react';
-import AosOlhosDoCoracaoIMG from '../assets/aos_olhos_do_coração.jpg';
-import ContosEmPretoEBrancoIMG from '../assets/contos_em_preto_e_branco.png';
-import FuturoDoPreterito from '../assets/14_futuro_preterito.png';
-import MachadoIMG from '../assets/machado.jpeg';
-import ICIMG from '../assets/ic.jpeg';
-import PlaceholderIMG from '../assets/foto_instagram.jpg'; // TODO: substituir pelas imagens corretas
+import AosOlhosDoCoracaoIMG from '../assets/aos-olhos-do-coracao/aos-olhos-do-coracao-card.png';
+import ContosEmPretoEBrancoIMG from '../assets/contos-em-preto-e-branco/contos-em-preto-e-branco-card.png';
+import FuturoDoPreterito from '../assets/futuro-do-preterito/futuro-do-preterito-capa.png';
+import MachadoIMG from '../assets/machado-de-assis/machado-de-assis-card.jpeg';
+import ICIMG from '../assets/iniciacao-cientifica/iniciacao-cientifica-card.jpeg';
+import DiagramacaoIMG from '../assets/diagramacao-apostilas/diagramacao-apostila-preview.jpeg';
+import ItalianoIMG from '../assets/italiano/italiano-capa-ilustracao.jpeg';
+import JaquetaIMG from '../assets/jaqueta-italiano-usp/italiano-jaqueta-azul.png';
 import { useLanguage } from '../contexts/LanguageContext';
 
 function Work() {
@@ -14,6 +16,7 @@ function Work() {
   const { t } = useLanguage();
 
   const cards = [
+    // Livros
     {
       title: t('project.aos_olhos'),
       subtitle: t('work.aos_olhos.subtitle'),
@@ -21,11 +24,7 @@ function Work() {
       image: AosOlhosDoCoracaoIMG,
       link: "/work/aos-olhos-do-coracao",
       imageConfig: {
-        size: 'full' as const,
         fit: 'contain' as const,
-        rounded: 'xl' as const,
-        shadow: 'none' as const,
-        className: 'rounded-2xl bg-white p-2.5',
       },
     },
     {
@@ -35,27 +34,11 @@ function Work() {
       image: ContosEmPretoEBrancoIMG,
       link: "/work/contos-em-preto-e-branco",
       imageConfig: {
-        size: 'full' as const,
-        fit: 'contain' as const,
-        rounded: 'xl' as const,
-        shadow: 'none' as const,
-        className: 'rounded-2xl bg-white p-2.5',
+        fit: 'cover' as const,
+        bgColor: '#000000',
       },
     },
-    {
-      title: t('project.futuro'),
-      subtitle: t('work.futuro.subtitle'),
-      description: t('work.futuro.description'),
-      image: FuturoDoPreterito,
-      link: "/work/futuro-do-preterito",
-      imageConfig: {
-        size: 'full' as const,
-        fit: 'contain' as const,
-        rounded: 'xl' as const,
-        shadow: 'none' as const,
-        className: 'rounded-2xl bg-white p-2.5',
-      },
-    },
+    // Ilustração
     {
       title: t('project.machado'),
       subtitle: t('work.machado.subtitle'),
@@ -67,34 +50,6 @@ function Work() {
         fit: 'contain' as const,
         rounded: 'xl' as const,
         shadow: 'none' as const,
-        className: 'rounded-2xl bg-white p-2.5',
-      },
-    },
-    {
-      title: t('project.ic'),
-      subtitle: t('work.ic.subtitle'),
-      description: t('work.ic.description'),
-      image: ICIMG,
-      link: "/work/iniciacao-cientifica",
-      imageConfig: {
-        size: 'full' as const,
-        fit: 'cover' as const,
-        rounded: 'xl' as const,
-        shadow: 'none' as const,
-        className: 'rounded-2xl',
-      },
-    },
-    {
-      title: t('project.diagramacao'),
-      subtitle: t('work.diagramacao.subtitle'),
-      description: t('work.diagramacao.description'),
-      image: PlaceholderIMG, // TODO: substituir pela imagem correta
-      link: "/work/diagramacao-apostilas",
-      imageConfig: {
-        size: 'full' as const,
-        fit: 'cover' as const,
-        rounded: 'xl' as const,
-        shadow: 'none' as const,
         className: 'rounded-2xl',
       },
     },
@@ -102,7 +57,7 @@ function Work() {
       title: t('project.italiano'),
       subtitle: t('work.italiano.subtitle'),
       description: t('work.italiano.description'),
-      image: PlaceholderIMG, // TODO: substituir pela imagem correta
+      image: ItalianoIMG,
       link: "/work/italiano",
       imageConfig: {
         size: 'full' as const,
@@ -113,11 +68,56 @@ function Work() {
       },
     },
     {
-      title: t('project.villare'),
-      subtitle: t('work.villare.subtitle'),
-      description: t('work.villare.description'),
-      image: PlaceholderIMG, // TODO: substituir pela imagem correta
-      link: "/work/amostra-minicontos-villare",
+      title: t('project.jaqueta'),
+      subtitle: t('work.jaqueta.subtitle'),
+      description: t('work.jaqueta.description'),
+      image: JaquetaIMG,
+      link: "/work/jaqueta-italiano-usp",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'contain' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl',
+      },
+    },
+    // Diagramação
+    {
+      title: t('project.diagramacao'),
+      subtitle: t('work.diagramacao.subtitle'),
+      description: t('work.diagramacao.description'),
+      image: DiagramacaoIMG,
+      link: "/work/diagramacao-apostilas",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'cover' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl',
+      },
+    },
+    // Design Editorial
+    {
+      title: t('project.futuro'),
+      subtitle: t('work.futuro.subtitle'),
+      description: t('work.futuro.description'),
+      image: FuturoDoPreterito,
+      link: "/work/futuro-do-preterito",
+      imageConfig: {
+        size: 'full' as const,
+        fit: 'contain' as const,
+        rounded: 'xl' as const,
+        shadow: 'none' as const,
+        className: 'rounded-2xl',
+      },
+    },
+    // Iniciação Científica
+    {
+      title: t('project.ic'),
+      subtitle: t('work.ic.subtitle'),
+      description: t('work.ic.description'),
+      image: ICIMG,
+      link: "/work/iniciacao-cientifica",
       imageConfig: {
         size: 'full' as const,
         fit: 'cover' as const,
