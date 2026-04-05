@@ -1,4 +1,5 @@
 import { Card } from './Card';
+import LinkedinPhoto from '../../assets/common/linkedin-photo.jpg';
 
 function LinkedinCard() {
   return (
@@ -11,7 +12,7 @@ function LinkedinCard() {
         <a href="https://www.linkedin.com/in/nicollemarinho/" className="flex items-center gap-2 sm:gap-4">
           <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden shrink-0">
             <img
-              src="https://media.licdn.com/dms/image/v2/D5603AQFvHl6ohu6KWQ/profile-displayphoto-shrink_400_400/B56ZUGh1nLHoAo-/0/1739571289700?e=1771459200&v=beta&t=X_LQQ4GWEAv-A9GtdCt_kArlDST_NAGChWqLvO4lMw4"
+              src={LinkedinPhoto}
               alt="Nicolle Marinho"
               className="w-full h-full object-cover"
               loading="lazy"

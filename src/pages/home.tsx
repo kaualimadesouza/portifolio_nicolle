@@ -8,7 +8,7 @@ import {
   LocationCard,
   AvailabilityCard,
 } from '../components/ui';
-import ProfilePhoto from '../assets/common/profile-photo.jpg';
+import ProfilePhoto from '../assets/common/home-profile-photo.jpg';
 import AosOlhosImg from '../assets/aos-olhos-do-coracao/aos-olhos-do-coracao-capa.jpg';
 import ContosImg from '../assets/contos-em-preto-e-branco/contos-em-preto-e-branco-capa.png';
 import { useLanguage } from '../contexts/LanguageContext';
